@@ -29,13 +29,28 @@ def getPlayerStats(playerID, statType):
 	
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=%s" % (playerID, statType))
 	data = response.json()
-
+	'''
 	if (response.status_code != 404):
 		print("GET Request successful (%s)" % response.status_code)
 		return data
 	else:
 		print("GET Request ERROR (%s)" % response.status_code)
 		return
+	'''
+
+	goals = data.keys()
+	print(goals)
+
+# statType: "statsSingleSeason"
+def getCurrentSeasonPlayerStats(playerID):
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason" % (playerID))
+	data = response.json()
+
+
+
+# statType: "yearByYear"
+def getCareerNHLStats(playerID): 
+	return
 
 # test 
 

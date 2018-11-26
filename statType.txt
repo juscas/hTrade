@@ -1,0 +1,94 @@
+StatTypes: 
+
+Ex: https://statsapi.web.nhl.com/api/v1/people/8475848/stats/?stats=yearByYear
+
+yearByYear - Career regular season stats in all leagues
+
+yearByYearRank - Career ranks in NHL only for following stats (Takes a while to load)
+      Ex:
+      "season": "20182019",
+                "stat": {
+                  "rankPowerPlayGoals": "119th",
+                  "rankBlockedShots": "330th",
+                  "rankAssists": "256th",
+                  "rankShotPct": "155th",
+                  "rankGoals": "22nd",
+                  "rankHits": "100th",
+                  "rankPenaltyMinutes": "126th",
+                  "rankShortHandedGoals": "62nd",
+                  "rankPlusMinus": "236th",
+                  "rankShots": "17th",
+                  "rankPoints": "105th",
+                  "rankOvertimeGoals": "51st",
+                  "rankGamesPlayed": "23rd"
+
+
+yearByYearPlayoffs - Career playoff stats in all leagues (if player did not play in playoffs for a season, season is not included in list)
+
+careerRegularSeason - Career total regular season stats 
+      Ex: 
+                "stat": {
+                  "timeOnIce": "6845:03",
+                  "assists": 126,
+                  "goals": 129,
+                  "pim": 248,
+                  "shots": 1301,
+                  "games": 430,
+                  "hits": 369,
+                  "powerPlayGoals": 31,
+                  "powerPlayPoints": 54,
+                  "powerPlayTimeOnIce": "1074:34",
+                  "evenTimeOnIce": "5736:45",
+                  "penaltyMinutes": "248",
+                  "faceOffPct": 41.4,
+                  "shotPct": 9.9,
+                  "gameWinningGoals": 18,
+                  "overTimeGoals": 0,
+                  "shortHandedGoals": 1,
+                  "shortHandedPoints": 1,
+                  "shortHandedTimeOnIce": "33:44",
+                  "blocked": 210,
+                  "plusMinus": 40,
+                  "points": 255,
+                  "shifts": 9357,
+                  "timeOnIcePerGame": "15:55",
+                  "evenTimeOnIcePerGame": "13:20",
+                  "shortHandedTimeOnIcePerGame": "00:04",
+                  "powerPlayTimeOnIcePerGame": "02:29"
+
+
+careerPlayoffs - Career total Playoff stats 
+
+gameLog - stats sheet for each game of the current regular season (add modifier "&season=20152016" for specific season)
+
+playoffGameLog - stats sheet for each game of the current playoffs (add modifier "&season=20152016" for specific season)
+
+vsTeam - cumulative stats sheet for totals against each team played in the current regular season
+
+vsTeamPlayoffs - cumulative stats sheet for totals against each team played in the current playoffs season
+
+vsDivision - cumulative stats sheet for totals against each division played in the current regular season
+
+vsDivisionPlayoffs - cumulative stats sheet for totals against each division played in the current playoffs
+
+vsConference - cumulative stats sheet for totals against each conference played in the current regular season
+
+vsConferencePlayoffs - cumulative stats sheet for totals against each conference played in the current playoffs
+
+byMonth - cumulative stats per month in current regular season
+
+byMonthPlayoffs - cumulative stats per month in current playoffs
+
+byDayOfWeek - cumulative stats per day of the week for current regular season (dayOfWeek = [1,7])
+
+byDayOfWeekPlayoffs - cumulative stats per day of the week for current playoffs (dayOfWeek = [1,7])
+
+homeAndAway - cumulative stats sheet of entire current season for home and away games
+
+homeAndAwayPlayoffs - cumulative stats sheet of entire playoffs for home and away games
+
+
+
+
+
+
