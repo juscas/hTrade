@@ -53,6 +53,8 @@ def getPlayerStatsByType(playerID, statType, season=""):
 	goals = data.keys()
 	print(goals)
 
+
+# TODO: Add a check for goalies and use goalei stattypelist for those
 def getCurrentSeasonPlayerStats(playerID):
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason" % (playerID))
 	data = response.json()
@@ -74,7 +76,7 @@ def getCareerNHLStats(playerID):
 # test 
 
 
-id = findPlayerId("justin", "playerlist.json")
+id = findPlayerId("laurent", "playerlist.json")
 
 statType = "statsSingleSeason"
 
