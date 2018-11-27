@@ -1,28 +1,18 @@
 {
 	"Updated": {
-"date": "2018-10-30 01:26:56.438572"
+"date": "2018-11-27 00:26:04.972268"
  },
 
     "Players": [ 
-{
-    "id": 8471226,
-    "fullName": "Drew Stafford",
-    "link": "/api/v1/people/8471226"
-},
-{
-    "id": 8473933,
-    "fullName": "Ben Lovejoy",
-    "link": "/api/v1/people/8473933"
-},
 {
     "id": 8477463,
     "fullName": "Steven Santini",
     "link": "/api/v1/people/8477463"
 },
 {
-    "id": 8479407,
-    "fullName": "Jesper Bratt",
-    "link": "/api/v1/people/8479407"
+    "id": 8479315,
+    "fullName": "Joey Anderson",
+    "link": "/api/v1/people/8479315"
 },
 {
     "id": 8477961,
@@ -33,6 +23,11 @@
     "id": 8470619,
     "fullName": "Brian Boyle",
     "link": "/api/v1/people/8470619"
+},
+{
+    "id": 8471226,
+    "fullName": "Drew Stafford",
+    "link": "/api/v1/people/8471226"
 },
 {
     "id": 8471233,
@@ -50,9 +45,9 @@
     "link": "/api/v1/people/8472382"
 },
 {
-    "id": 8473468,
-    "fullName": "Eric Gryba",
-    "link": "/api/v1/people/8473468"
+    "id": 8473933,
+    "fullName": "Ben Lovejoy",
+    "link": "/api/v1/people/8473933"
 },
 {
     "id": 8475149,
@@ -68,11 +63,6 @@
     "id": 8475222,
     "fullName": "Sami Vatanen",
     "link": "/api/v1/people/8475222"
-},
-{
-    "id": 8475663,
-    "fullName": "Eddie Lack",
-    "link": "/api/v1/people/8475663"
 },
 {
     "id": 8475791,
@@ -125,9 +115,14 @@
     "link": "/api/v1/people/8478401"
 },
 {
-    "id": 8479315,
-    "fullName": "Joey Anderson",
-    "link": "/api/v1/people/8479315"
+    "id": 8478881,
+    "fullName": "Brett Seney",
+    "link": "/api/v1/people/8478881"
+},
+{
+    "id": 8479407,
+    "fullName": "Jesper Bratt",
+    "link": "/api/v1/people/8479407"
 },
 {
     "id": 8480002,
@@ -140,6 +135,16 @@
     "link": "/api/v1/people/8480948"
 },
 {
+    "id": 8471217,
+    "fullName": "Andrew Ladd",
+    "link": "/api/v1/people/8471217"
+},
+{
+    "id": 8475231,
+    "fullName": "Casey Cizikas",
+    "link": "/api/v1/people/8475231"
+},
+{
     "id": 8470047,
     "fullName": "Valtteri Filppula",
     "link": "/api/v1/people/8470047"
@@ -150,14 +155,14 @@
     "link": "/api/v1/people/8470187"
 },
 {
-    "id": 8471217,
-    "fullName": "Andrew Ladd",
-    "link": "/api/v1/people/8471217"
-},
-{
     "id": 8471306,
     "fullName": "Thomas Greiss",
     "link": "/api/v1/people/8471306"
+},
+{
+    "id": 8472410,
+    "fullName": "Stephen Gionta",
+    "link": "/api/v1/people/8472410"
 },
 {
     "id": 8473463,
@@ -205,11 +210,6 @@
     "link": "/api/v1/people/8475215"
 },
 {
-    "id": 8475231,
-    "fullName": "Casey Cizikas",
-    "link": "/api/v1/people/8475231"
-},
-{
     "id": 8475314,
     "fullName": "Anders Lee",
     "link": "/api/v1/people/8475314"
@@ -255,14 +255,19 @@
     "link": "/api/v1/people/8478463"
 },
 {
-    "id": 8476368,
-    "fullName": "Fredrik Claesson",
-    "link": "/api/v1/people/8476368"
+    "id": 8479206,
+    "fullName": "Tanner Fritz",
+    "link": "/api/v1/people/8479206"
 },
 {
-    "id": 8476922,
-    "fullName": "Boo Nieves",
-    "link": "/api/v1/people/8476922"
+    "id": 8471717,
+    "fullName": "Adam McQuaid",
+    "link": "/api/v1/people/8471717"
+},
+{
+    "id": 8477402,
+    "fullName": "Pavel Buchnevich",
+    "link": "/api/v1/people/8477402"
 },
 {
     "id": 8468685,
@@ -278,11 +283,6 @@
     "id": 8471686,
     "fullName": "Marc Staal",
     "link": "/api/v1/people/8471686"
-},
-{
-    "id": 8471717,
-    "fullName": "Adam McQuaid",
-    "link": "/api/v1/people/8471717"
 },
 {
     "id": 8474031,
@@ -305,11 +305,6 @@
     "link": "/api/v1/people/8475692"
 },
 {
-    "id": 8475727,
-    "fullName": "Ryan Spooner",
-    "link": "/api/v1/people/8475727"
-},
-{
     "id": 8475763,
     "fullName": "Kevin Hayes",
     "link": "/api/v1/people/8475763"
@@ -318,6 +313,21 @@
     "id": 8475855,
     "fullName": "Jesper Fast",
     "link": "/api/v1/people/8475855"
+},
+{
+    "id": 8476368,
+    "fullName": "Fredrik Claesson",
+    "link": "/api/v1/people/8476368"
+},
+{
+    "id": 8476396,
+    "fullName": "Steven Fogarty",
+    "link": "/api/v1/people/8476396"
+},
+{
+    "id": 8476458,
+    "fullName": "Ryan Strome",
+    "link": "/api/v1/people/8476458"
 },
 {
     "id": 8476459,
@@ -340,11 +350,6 @@
     "link": "/api/v1/people/8476918"
 },
 {
-    "id": 8477402,
-    "fullName": "Pavel Buchnevich",
-    "link": "/api/v1/people/8477402"
-},
-{
     "id": 8477950,
     "fullName": "Tony DeAngelo",
     "link": "/api/v1/people/8477950"
@@ -355,9 +360,14 @@
     "link": "/api/v1/people/8479353"
 },
 {
-    "id": 8479968,
-    "fullName": "Vinni Lettieri",
-    "link": "/api/v1/people/8479968"
+    "id": 8479364,
+    "fullName": "Timothy Gettinger",
+    "link": "/api/v1/people/8479364"
+},
+{
+    "id": 8480072,
+    "fullName": "Lias Andersson",
+    "link": "/api/v1/people/8480072"
 },
 {
     "id": 8480078,
@@ -375,9 +385,14 @@
     "link": "/api/v1/people/8480382"
 },
 {
-    "id": 8474037,
-    "fullName": "James van Riemsdyk",
-    "link": "/api/v1/people/8474037"
+    "id": 8470880,
+    "fullName": "Brian Elliott",
+    "link": "/api/v1/people/8470880"
+},
+{
+    "id": 8473607,
+    "fullName": "Michal Neuvirth",
+    "link": "/api/v1/people/8473607"
 },
 {
     "id": 8475260,
@@ -390,11 +405,6 @@
     "link": "/api/v1/people/8477290"
 },
 {
-    "id": 8470880,
-    "fullName": "Brian Elliott",
-    "link": "/api/v1/people/8470880"
-},
-{
     "id": 8473512,
     "fullName": "Claude Giroux",
     "link": "/api/v1/people/8473512"
@@ -405,9 +415,9 @@
     "link": "/api/v1/people/8473584"
 },
 {
-    "id": 8473607,
-    "fullName": "Michal Neuvirth",
-    "link": "/api/v1/people/8473607"
+    "id": 8474037,
+    "fullName": "James van Riemsdyk",
+    "link": "/api/v1/people/8474037"
 },
 {
     "id": 8474161,
@@ -460,6 +470,11 @@
     "link": "/api/v1/people/8476906"
 },
 {
+    "id": 8476932,
+    "fullName": "Anthony Stolarz",
+    "link": "/api/v1/people/8476932"
+},
+{
     "id": 8477399,
     "fullName": "Tyrell Goulbourne",
     "link": "/api/v1/people/8477399"
@@ -478,11 +493,6 @@
     "id": 8477948,
     "fullName": "Travis Sanheim",
     "link": "/api/v1/people/8477948"
-},
-{
-    "id": 8477979,
-    "fullName": "Nicolas Aube-Kubel",
-    "link": "/api/v1/people/8477979"
 },
 {
     "id": 8478067,
@@ -505,14 +515,19 @@
     "link": "/api/v1/people/8479974"
 },
 {
+    "id": 8464989,
+    "fullName": "Matt Cullen",
+    "link": "/api/v1/people/8464989"
+},
+{
     "id": 8474602,
     "fullName": "Justin Schultz",
     "link": "/api/v1/people/8474602"
 },
 {
-    "id": 8464989,
-    "fullName": "Matt Cullen",
-    "link": "/api/v1/people/8464989"
+    "id": 8476899,
+    "fullName": "Matt Murray",
+    "link": "/api/v1/people/8476899"
 },
 {
     "id": 8471215,
@@ -550,11 +565,6 @@
     "link": "/api/v1/people/8473548"
 },
 {
-    "id": 8474176,
-    "fullName": "Carl Hagelin",
-    "link": "/api/v1/people/8474176"
-},
-{
     "id": 8474683,
     "fullName": "Derek Grant",
     "link": "/api/v1/people/8474683"
@@ -563,6 +573,11 @@
     "id": 8475208,
     "fullName": "Brian Dumoulin",
     "link": "/api/v1/people/8475208"
+},
+{
+    "id": 8475253,
+    "fullName": "Garrett Wilson",
+    "link": "/api/v1/people/8475253"
 },
 {
     "id": 8475772,
@@ -580,14 +595,14 @@
     "link": "/api/v1/people/8476467"
 },
 {
+    "id": 8476871,
+    "fullName": "Tanner Pearson",
+    "link": "/api/v1/people/8476871"
+},
+{
     "id": 8476874,
     "fullName": "Olli Maatta",
     "link": "/api/v1/people/8476874"
-},
-{
-    "id": 8476899,
-    "fullName": "Matt Murray",
-    "link": "/api/v1/people/8476899"
 },
 {
     "id": 8477244,
@@ -598,6 +613,11 @@
     "id": 8477404,
     "fullName": "Jake Guentzel",
     "link": "/api/v1/people/8477404"
+},
+{
+    "id": 8477465,
+    "fullName": "Tristan Jarry",
+    "link": "/api/v1/people/8477465"
 },
 {
     "id": 8478466,
@@ -615,24 +635,14 @@
     "link": "/api/v1/people/8479193"
 },
 {
+    "id": 8479944,
+    "fullName": "Zach Aston-Reese",
+    "link": "/api/v1/people/8479944"
+},
+{
     "id": 8480945,
     "fullName": "Juuso Riikola",
     "link": "/api/v1/people/8480945"
-},
-{
-    "id": 8476191,
-    "fullName": "Kevan Miller",
-    "link": "/api/v1/people/8476191"
-},
-{
-    "id": 8476792,
-    "fullName": "Torey Krug",
-    "link": "/api/v1/people/8476792"
-},
-{
-    "id": 8479325,
-    "fullName": "Charlie McAvoy",
-    "link": "/api/v1/people/8479325"
 },
 {
     "id": 8465009,
@@ -643,6 +653,21 @@
     "id": 8470638,
     "fullName": "Patrice Bergeron",
     "link": "/api/v1/people/8470638"
+},
+{
+    "id": 8478443,
+    "fullName": "Brandon Carlo",
+    "link": "/api/v1/people/8478443"
+},
+{
+    "id": 8479325,
+    "fullName": "Charlie McAvoy",
+    "link": "/api/v1/people/8479325"
+},
+{
+    "id": 8480001,
+    "fullName": "Urho Vaakanainen",
+    "link": "/api/v1/people/8480001"
 },
 {
     "id": 8470655,
@@ -690,14 +715,29 @@
     "link": "/api/v1/people/8475807"
 },
 {
+    "id": 8476191,
+    "fullName": "Kevan Miller",
+    "link": "/api/v1/people/8476191"
+},
+{
     "id": 8476374,
     "fullName": "Sean Kuraly",
     "link": "/api/v1/people/8476374"
 },
 {
+    "id": 8476792,
+    "fullName": "Torey Krug",
+    "link": "/api/v1/people/8476792"
+},
+{
     "id": 8476891,
     "fullName": "Matt Grzelcyk",
     "link": "/api/v1/people/8476891"
+},
+{
+    "id": 8477365,
+    "fullName": "Connor Clifton",
+    "link": "/api/v1/people/8477365"
 },
 {
     "id": 8477529,
@@ -710,11 +750,6 @@
     "link": "/api/v1/people/8477956"
 },
 {
-    "id": 8477987,
-    "fullName": "Ryan Donato",
-    "link": "/api/v1/people/8477987"
-},
-{
     "id": 8478046,
     "fullName": "Danton Heinen",
     "link": "/api/v1/people/8478046"
@@ -725,9 +760,9 @@
     "link": "/api/v1/people/8478075"
 },
 {
-    "id": 8478443,
-    "fullName": "Brandon Carlo",
-    "link": "/api/v1/people/8478443"
+    "id": 8478417,
+    "fullName": "Jakob Forsbacka Karlsson",
+    "link": "/api/v1/people/8478417"
 },
 {
     "id": 8478468,
@@ -745,19 +780,14 @@
     "link": "/api/v1/people/8478569"
 },
 {
-    "id": 8480001,
-    "fullName": "Urho Vaakanainen",
-    "link": "/api/v1/people/8480001"
+    "id": 8473534,
+    "fullName": "Patrik Berglund",
+    "link": "/api/v1/people/8473534"
 },
 {
     "id": 8476293,
     "fullName": "Scott Wilson",
     "link": "/api/v1/people/8476293"
-},
-{
-    "id": 8477391,
-    "fullName": "Sean Malone",
-    "link": "/api/v1/people/8477391"
 },
 {
     "id": 8469506,
@@ -773,11 +803,6 @@
     "id": 8473449,
     "fullName": "Kyle Okposo",
     "link": "/api/v1/people/8473449"
-},
-{
-    "id": 8473534,
-    "fullName": "Patrik Berglund",
-    "link": "/api/v1/people/8473534"
 },
 {
     "id": 8474567,
@@ -875,19 +900,29 @@
     "link": "/api/v1/people/8480839"
 },
 {
-    "id": 8469521,
-    "fullName": "Tomas Plekanec",
-    "link": "/api/v1/people/8469521"
-},
-{
     "id": 8470642,
     "fullName": "Shea Weber",
     "link": "/api/v1/people/8470642"
 },
 {
-    "id": 8473673,
-    "fullName": "David Schlemko",
-    "link": "/api/v1/people/8473673"
+    "id": 8474038,
+    "fullName": "Paul Byron",
+    "link": "/api/v1/people/8474038"
+},
+{
+    "id": 8476469,
+    "fullName": "Joel Armia",
+    "link": "/api/v1/people/8476469"
+},
+{
+    "id": 8477957,
+    "fullName": "Nikita Scherbak",
+    "link": "/api/v1/people/8477957"
+},
+{
+    "id": 8478454,
+    "fullName": "Noah Juulsen",
+    "link": "/api/v1/people/8478454"
 },
 {
     "id": 8471679,
@@ -900,14 +935,14 @@
     "link": "/api/v1/people/8473507"
 },
 {
+    "id": 8473673,
+    "fullName": "David Schlemko",
+    "link": "/api/v1/people/8473673"
+},
+{
     "id": 8473991,
     "fullName": "Karl Alzner",
     "link": "/api/v1/people/8473991"
-},
-{
-    "id": 8474038,
-    "fullName": "Paul Byron",
-    "link": "/api/v1/people/8474038"
 },
 {
     "id": 8474550,
@@ -928,6 +963,16 @@
     "id": 8475235,
     "fullName": "Nicolas Deslauriers",
     "link": "/api/v1/people/8475235"
+},
+{
+    "id": 8475808,
+    "fullName": "Michael Chaput",
+    "link": "/api/v1/people/8475808"
+},
+{
+    "id": 8475844,
+    "fullName": "Kenny Agostino",
+    "link": "/api/v1/people/8475844"
 },
 {
     "id": 8475848,
@@ -955,11 +1000,6 @@
     "link": "/api/v1/people/8476443"
 },
 {
-    "id": 8476469,
-    "fullName": "Joel Armia",
-    "link": "/api/v1/people/8476469"
-},
-{
     "id": 8476479,
     "fullName": "Phillip Danault",
     "link": "/api/v1/people/8476479"
@@ -968,6 +1008,11 @@
     "id": 8476948,
     "fullName": "Charles Hudon",
     "link": "/api/v1/people/8476948"
+},
+{
+    "id": 8476967,
+    "fullName": "Brett Kulak",
+    "link": "/api/v1/people/8476967"
 },
 {
     "id": 8477476,
@@ -985,16 +1030,6 @@
     "link": "/api/v1/people/8477503"
 },
 {
-    "id": 8477957,
-    "fullName": "Nikita Scherbak",
-    "link": "/api/v1/people/8477957"
-},
-{
-    "id": 8478454,
-    "fullName": "Noah Juulsen",
-    "link": "/api/v1/people/8478454"
-},
-{
     "id": 8479376,
     "fullName": "Victor Mete",
     "link": "/api/v1/people/8479376"
@@ -1005,29 +1040,19 @@
     "link": "/api/v1/people/8480829"
 },
 {
-    "id": 8474250,
-    "fullName": "Zack Smith",
-    "link": "/api/v1/people/8474250"
-},
-{
     "id": 8476419,
     "fullName": "Jean-Gabriel Pageau",
     "link": "/api/v1/people/8476419"
 },
 {
-    "id": 8477433,
-    "fullName": "Ben Harpur",
-    "link": "/api/v1/people/8477433"
-},
-{
-    "id": 8480801,
-    "fullName": "Brady Tkachuk",
-    "link": "/api/v1/people/8480801"
-},
-{
     "id": 8467950,
     "fullName": "Craig Anderson",
     "link": "/api/v1/people/8467950"
+},
+{
+    "id": 8470093,
+    "fullName": "Mike McKenna",
+    "link": "/api/v1/people/8470093"
 },
 {
     "id": 8471676,
@@ -1038,6 +1063,11 @@
     "id": 8471768,
     "fullName": "Tom Pyatt",
     "link": "/api/v1/people/8471768"
+},
+{
+    "id": 8474250,
+    "fullName": "Zack Smith",
+    "link": "/api/v1/people/8474250"
 },
 {
     "id": 8474571,
@@ -1058,11 +1088,6 @@
     "id": 8475175,
     "fullName": "Magnus Paajarvi",
     "link": "/api/v1/people/8475175"
-},
-{
-    "id": 8475227,
-    "fullName": "Chris Wideman",
-    "link": "/api/v1/people/8475227"
 },
 {
     "id": 8475913,
@@ -1095,14 +1120,9 @@
     "link": "/api/v1/people/8476919"
 },
 {
-    "id": 8477237,
-    "fullName": "Mike Condon",
-    "link": "/api/v1/people/8477237"
-},
-{
-    "id": 8478268,
-    "fullName": "Jack Rodewald",
-    "link": "/api/v1/people/8478268"
+    "id": 8477433,
+    "fullName": "Ben Harpur",
+    "link": "/api/v1/people/8477433"
 },
 {
     "id": 8478400,
@@ -1115,11 +1135,6 @@
     "link": "/api/v1/people/8478469"
 },
 {
-    "id": 8478846,
-    "fullName": "Christian Wolanin",
-    "link": "/api/v1/people/8478846"
-},
-{
     "id": 8478868,
     "fullName": "Christian Jaros",
     "link": "/api/v1/people/8478868"
@@ -1130,9 +1145,14 @@
     "link": "/api/v1/people/8479320"
 },
 {
-    "id": 8480029,
-    "fullName": "Alex Formenton",
-    "link": "/api/v1/people/8480029"
+    "id": 8480208,
+    "fullName": "Drake Batherson",
+    "link": "/api/v1/people/8480208"
+},
+{
+    "id": 8480801,
+    "fullName": "Brady Tkachuk",
+    "link": "/api/v1/people/8480801"
 },
 {
     "id": 8479318,
@@ -1250,9 +1270,9 @@
     "link": "/api/v1/people/8480944"
 },
 {
-    "id": 8476437,
-    "fullName": "Victor Rask",
-    "link": "/api/v1/people/8476437"
+    "id": 8477488,
+    "fullName": "Brett Pesce",
+    "link": "/api/v1/people/8477488"
 },
 {
     "id": 8468508,
@@ -1295,6 +1315,11 @@
     "link": "/api/v1/people/8475907"
 },
 {
+    "id": 8476437,
+    "fullName": "Victor Rask",
+    "link": "/api/v1/people/8476437"
+},
+{
     "id": 8476462,
     "fullName": "Dougie Hamilton",
     "link": "/api/v1/people/8476462"
@@ -1330,14 +1355,14 @@
     "link": "/api/v1/people/8477458"
 },
 {
-    "id": 8477488,
-    "fullName": "Brett Pesce",
-    "link": "/api/v1/people/8477488"
-},
-{
     "id": 8477845,
     "fullName": "Trevor van Riemsdyk",
     "link": "/api/v1/people/8477845"
+},
+{
+    "id": 8477938,
+    "fullName": "Haydn Fleury",
+    "link": "/api/v1/people/8477938"
 },
 {
     "id": 8477998,
@@ -1355,9 +1380,9 @@
     "link": "/api/v1/people/8478427"
 },
 {
-    "id": 8478462,
-    "fullName": "Nicolas Roy",
-    "link": "/api/v1/people/8478462"
+    "id": 8479402,
+    "fullName": "Jake Bean",
+    "link": "/api/v1/people/8479402"
 },
 {
     "id": 8480830,
@@ -1365,14 +1390,19 @@
     "link": "/api/v1/people/8480830"
 },
 {
-    "id": 8466141,
-    "fullName": "Roberto Luongo",
-    "link": "/api/v1/people/8466141"
-},
-{
     "id": 8468001,
     "fullName": "Derek MacKenzie",
     "link": "/api/v1/people/8468001"
+},
+{
+    "id": 8476389,
+    "fullName": "Vincent Trocheck",
+    "link": "/api/v1/people/8476389"
+},
+{
+    "id": 8466141,
+    "fullName": "Roberto Luongo",
+    "link": "/api/v1/people/8466141"
 },
 {
     "id": 8471426,
@@ -1400,6 +1430,11 @@
     "link": "/api/v1/people/8474149"
 },
 {
+    "id": 8474230,
+    "fullName": "Micheal Haley",
+    "link": "/api/v1/people/8474230"
+},
+{
     "id": 8474636,
     "fullName": "Michael Hutchinson",
     "link": "/api/v1/people/8474636"
@@ -1423,11 +1458,6 @@
     "id": 8475796,
     "fullName": "Mark Pysyk",
     "link": "/api/v1/people/8475796"
-},
-{
-    "id": 8476389,
-    "fullName": "Vincent Trocheck",
-    "link": "/api/v1/people/8476389"
 },
 {
     "id": 8476456,
@@ -1465,6 +1495,11 @@
     "link": "/api/v1/people/8477996"
 },
 {
+    "id": 8478211,
+    "fullName": "Dryden Hunt",
+    "link": "/api/v1/people/8478211"
+},
+{
     "id": 8478366,
     "fullName": "Frank Vatrano",
     "link": "/api/v1/people/8478366"
@@ -1475,19 +1510,19 @@
     "link": "/api/v1/people/8478843"
 },
 {
-    "id": 8479553,
-    "fullName": "Maxim Mamin",
-    "link": "/api/v1/people/8479553"
-},
-{
     "id": 8480955,
     "fullName": "Bogdan Kiselevich",
     "link": "/api/v1/people/8480955"
 },
 {
-    "id": 8475167,
-    "fullName": "Victor Hedman",
-    "link": "/api/v1/people/8475167"
+    "id": 8476292,
+    "fullName": "Ondrej Palat",
+    "link": "/api/v1/people/8476292"
+},
+{
+    "id": 8476883,
+    "fullName": "Andrei Vasilevskiy",
+    "link": "/api/v1/people/8476883"
 },
 {
     "id": 8470601,
@@ -1530,14 +1565,19 @@
     "link": "/api/v1/people/8474870"
 },
 {
+    "id": 8475167,
+    "fullName": "Victor Hedman",
+    "link": "/api/v1/people/8475167"
+},
+{
+    "id": 8475277,
+    "fullName": "Edward Pasquale",
+    "link": "/api/v1/people/8475277"
+},
+{
     "id": 8475839,
     "fullName": "Louis Domingue",
     "link": "/api/v1/people/8475839"
-},
-{
-    "id": 8476292,
-    "fullName": "Ondrej Palat",
-    "link": "/api/v1/people/8476292"
 },
 {
     "id": 8476453,
@@ -1553,11 +1593,6 @@
     "id": 8476826,
     "fullName": "Yanni Gourde",
     "link": "/api/v1/people/8476826"
-},
-{
-    "id": 8476883,
-    "fullName": "Andrei Vasilevskiy",
-    "link": "/api/v1/people/8476883"
 },
 {
     "id": 8476886,
@@ -1585,6 +1620,11 @@
     "link": "/api/v1/people/8478365"
 },
 {
+    "id": 8478416,
+    "fullName": "Erik Cernak",
+    "link": "/api/v1/people/8478416"
+},
+{
     "id": 8478472,
     "fullName": "Mathieu Joseph",
     "link": "/api/v1/people/8478472"
@@ -1598,21 +1638,6 @@
     "id": 8479410,
     "fullName": "Mikhail Sergachev",
     "link": "/api/v1/people/8479410"
-},
-{
-    "id": 8476329,
-    "fullName": "Travis Boyd",
-    "link": "/api/v1/people/8476329"
-},
-{
-    "id": 8476880,
-    "fullName": "Tom Wilson",
-    "link": "/api/v1/people/8476880"
-},
-{
-    "id": 8478063,
-    "fullName": "Shane Gersich",
-    "link": "/api/v1/people/8478063"
 },
 {
     "id": 8468498,
@@ -1680,9 +1705,19 @@
     "link": "/api/v1/people/8475792"
 },
 {
+    "id": 8476329,
+    "fullName": "Travis Boyd",
+    "link": "/api/v1/people/8476329"
+},
+{
     "id": 8476436,
     "fullName": "Dmitrij Jaskin",
     "link": "/api/v1/people/8476436"
+},
+{
+    "id": 8476880,
+    "fullName": "Tom Wilson",
+    "link": "/api/v1/people/8476880"
 },
 {
     "id": 8476905,
@@ -1705,11 +1740,6 @@
     "link": "/api/v1/people/8477474"
 },
 {
-    "id": 8477573,
-    "fullName": "Nathan Walker",
-    "link": "/api/v1/people/8477573"
-},
-{
     "id": 8477831,
     "fullName": "Pheonix Copley",
     "link": "/api/v1/people/8477831"
@@ -1720,9 +1750,19 @@
     "link": "/api/v1/people/8477944"
 },
 {
+    "id": 8478399,
+    "fullName": "Jonas Siegenthaler",
+    "link": "/api/v1/people/8478399"
+},
+{
     "id": 8479482,
     "fullName": "Michal Kempny",
     "link": "/api/v1/people/8479482"
+},
+{
+    "id": 8475869,
+    "fullName": "Brandon Davidson",
+    "link": "/api/v1/people/8475869"
 },
 {
     "id": 8476473,
@@ -1780,11 +1820,6 @@
     "link": "/api/v1/people/8475430"
 },
 {
-    "id": 8475869,
-    "fullName": "Brandon Davidson",
-    "link": "/api/v1/people/8475869"
-},
-{
     "id": 8476438,
     "fullName": "Brandon Saad",
     "link": "/api/v1/people/8476438"
@@ -1795,19 +1830,24 @@
     "link": "/api/v1/people/8476979"
 },
 {
-    "id": 8477366,
-    "fullName": "Luke Johnson",
-    "link": "/api/v1/people/8477366"
-},
-{
     "id": 8477401,
     "fullName": "John Hayden",
     "link": "/api/v1/people/8477401"
 },
 {
-    "id": 8477951,
-    "fullName": "Nick Schmaltz",
-    "link": "/api/v1/people/8477951"
+    "id": 8477943,
+    "fullName": "Brendan Perlini",
+    "link": "/api/v1/people/8477943"
+},
+{
+    "id": 8478055,
+    "fullName": "Gustav Forsling",
+    "link": "/api/v1/people/8478055"
+},
+{
+    "id": 8478440,
+    "fullName": "Dylan Strome",
+    "link": "/api/v1/people/8478440"
 },
 {
     "id": 8478561,
@@ -1845,9 +1885,9 @@
     "link": "/api/v1/people/8480946"
 },
 {
-    "id": 8477215,
-    "fullName": "Danny DeKeyser",
-    "link": "/api/v1/people/8477215"
+    "id": 8471794,
+    "fullName": "Darren Helm",
+    "link": "/api/v1/people/8471794"
 },
 {
     "id": 8468509,
@@ -1890,11 +1930,6 @@
     "link": "/api/v1/people/8471716"
 },
 {
-    "id": 8471794,
-    "fullName": "Darren Helm",
-    "link": "/api/v1/people/8471794"
-},
-{
     "id": 8473541,
     "fullName": "Jonathan Bernier",
     "link": "/api/v1/people/8473541"
@@ -1930,6 +1965,11 @@
     "link": "/api/v1/people/8476960"
 },
 {
+    "id": 8477215,
+    "fullName": "Danny DeKeyser",
+    "link": "/api/v1/people/8477215"
+},
+{
     "id": 8477455,
     "fullName": "Jacob de la Rose",
     "link": "/api/v1/people/8477455"
@@ -1950,9 +1990,9 @@
     "link": "/api/v1/people/8477946"
 },
 {
-    "id": 8478176,
-    "fullName": "Joe Hicketts",
-    "link": "/api/v1/people/8478176"
+    "id": 8478036,
+    "fullName": "Christoffer Ehn",
+    "link": "/api/v1/people/8478036"
 },
 {
     "id": 8479395,
@@ -1965,6 +2005,21 @@
     "link": "/api/v1/people/8479992"
 },
 {
+    "id": 8474056,
+    "fullName": "P.K. Subban",
+    "link": "/api/v1/people/8474056"
+},
+{
+    "id": 8474068,
+    "fullName": "Kyle Turris",
+    "link": "/api/v1/people/8474068"
+},
+{
+    "id": 8478042,
+    "fullName": "Viktor Arvidsson",
+    "link": "/api/v1/people/8478042"
+},
+{
     "id": 8469465,
     "fullName": "Dan Hamhuis",
     "link": "/api/v1/people/8469465"
@@ -1975,24 +2030,9 @@
     "link": "/api/v1/people/8471469"
 },
 {
-    "id": 8475766,
-    "fullName": "Austin Watson",
-    "link": "/api/v1/people/8475766"
-},
-{
     "id": 8474009,
     "fullName": "Nick Bonino",
     "link": "/api/v1/people/8474009"
-},
-{
-    "id": 8474056,
-    "fullName": "P.K. Subban",
-    "link": "/api/v1/people/8474056"
-},
-{
-    "id": 8474068,
-    "fullName": "Kyle Turris",
-    "link": "/api/v1/people/8474068"
 },
 {
     "id": 8474134,
@@ -2035,6 +2075,11 @@
     "link": "/api/v1/people/8475714"
 },
 {
+    "id": 8475766,
+    "fullName": "Austin Watson",
+    "link": "/api/v1/people/8475766"
+},
+{
     "id": 8475793,
     "fullName": "Ryan Johansen",
     "link": "/api/v1/people/8475793"
@@ -2065,11 +2110,6 @@
     "link": "/api/v1/people/8476925"
 },
 {
-    "id": 8477234,
-    "fullName": "Troy Grosenick",
-    "link": "/api/v1/people/8477234"
-},
-{
     "id": 8477424,
     "fullName": "Juuse Saros",
     "link": "/api/v1/people/8477424"
@@ -2090,34 +2130,14 @@
     "link": "/api/v1/people/8477942"
 },
 {
-    "id": 8478042,
-    "fullName": "Viktor Arvidsson",
-    "link": "/api/v1/people/8478042"
-},
-{
     "id": 8474145,
     "fullName": "Robert Bortuzzo",
     "link": "/api/v1/people/8474145"
 },
 {
-    "id": 8474125,
-    "fullName": "Carl Gunnarsson",
-    "link": "/api/v1/people/8474125"
-},
-{
-    "id": 8477952,
-    "fullName": "Robby Fabbri",
-    "link": "/api/v1/people/8477952"
-},
-{
-    "id": 8478373,
-    "fullName": "Nikita Soshnikov",
-    "link": "/api/v1/people/8478373"
-},
-{
-    "id": 8479385,
-    "fullName": "Jordan Kyrou",
-    "link": "/api/v1/people/8479385"
+    "id": 8475768,
+    "fullName": "Jaden Schwartz",
+    "link": "/api/v1/people/8475768"
 },
 {
     "id": 8470151,
@@ -2143,6 +2163,11 @@
     "id": 8474102,
     "fullName": "David Perron",
     "link": "/api/v1/people/8474102"
+},
+{
+    "id": 8474125,
+    "fullName": "Carl Gunnarsson",
+    "link": "/api/v1/people/8474125"
 },
 {
     "id": 8474565,
@@ -2175,11 +2200,6 @@
     "link": "/api/v1/people/8475765"
 },
 {
-    "id": 8475768,
-    "fullName": "Jaden Schwartz",
-    "link": "/api/v1/people/8475768"
-},
-{
     "id": 8476441,
     "fullName": "Joel Edmundson",
     "link": "/api/v1/people/8476441"
@@ -2205,14 +2225,24 @@
     "link": "/api/v1/people/8477482"
 },
 {
+    "id": 8477952,
+    "fullName": "Robby Fabbri",
+    "link": "/api/v1/people/8477952"
+},
+{
     "id": 8477964,
     "fullName": "Ivan Barbashev",
     "link": "/api/v1/people/8477964"
 },
 {
-    "id": 8478024,
-    "fullName": "Ville Husso",
-    "link": "/api/v1/people/8478024"
+    "id": 8478104,
+    "fullName": "Sammy Blais",
+    "link": "/api/v1/people/8478104"
+},
+{
+    "id": 8478373,
+    "fullName": "Nikita Soshnikov",
+    "link": "/api/v1/people/8478373"
 },
 {
     "id": 8478407,
@@ -2225,9 +2255,14 @@
     "link": "/api/v1/people/8480023"
 },
 {
-    "id": 8480143,
-    "fullName": "Jakub Jerabek",
-    "link": "/api/v1/people/8480143"
+    "id": 8473564,
+    "fullName": "Michael Frolik",
+    "link": "/api/v1/people/8473564"
+},
+{
+    "id": 8474628,
+    "fullName": "Michael Stone",
+    "link": "/api/v1/people/8474628"
 },
 {
     "id": 8474061,
@@ -2250,11 +2285,6 @@
     "link": "/api/v1/people/8471707"
 },
 {
-    "id": 8473564,
-    "fullName": "Michael Frolik",
-    "link": "/api/v1/people/8473564"
-},
-{
     "id": 8474150,
     "fullName": "Mikael Backlund",
     "link": "/api/v1/people/8474150"
@@ -2263,11 +2293,6 @@
     "id": 8474612,
     "fullName": "Travis Hamonic",
     "link": "/api/v1/people/8474612"
-},
-{
-    "id": 8474628,
-    "fullName": "Michael Stone",
-    "link": "/api/v1/people/8474628"
 },
 {
     "id": 8474673,
@@ -2350,11 +2375,6 @@
     "link": "/api/v1/people/8479976"
 },
 {
-    "id": 8477456,
-    "fullName": "J.T. Compher",
-    "link": "/api/v1/people/8477456"
-},
-{
     "id": 8479982,
     "fullName": "Conor Timmins",
     "link": "/api/v1/people/8479982"
@@ -2435,9 +2455,9 @@
     "link": "/api/v1/people/8477413"
 },
 {
-    "id": 8477448,
-    "fullName": "Marko Dano",
-    "link": "/api/v1/people/8477448"
+    "id": 8477456,
+    "fullName": "J.T. Compher",
+    "link": "/api/v1/people/8477456"
 },
 {
     "id": 8477492,
@@ -2470,9 +2490,14 @@
     "link": "/api/v1/people/8479398"
 },
 {
-    "id": 8476427,
-    "fullName": "Ty Rattie",
-    "link": "/api/v1/people/8476427"
+    "id": 8480326,
+    "fullName": "Sheldon Dries",
+    "link": "/api/v1/people/8480326"
+},
+{
+    "id": 8476356,
+    "fullName": "Tobias Rieder",
+    "link": "/api/v1/people/8476356"
 },
 {
     "id": 8471284,
@@ -2515,14 +2540,29 @@
     "link": "/api/v1/people/8475178"
 },
 {
+    "id": 8475227,
+    "fullName": "Chris Wideman",
+    "link": "/api/v1/people/8475227"
+},
+{
     "id": 8475660,
     "fullName": "Cam Talbot",
     "link": "/api/v1/people/8475660"
 },
 {
-    "id": 8476356,
-    "fullName": "Tobias Rieder",
-    "link": "/api/v1/people/8476356"
+    "id": 8475727,
+    "fullName": "Ryan Spooner",
+    "link": "/api/v1/people/8475727"
+},
+{
+    "id": 8475857,
+    "fullName": "Kevin Gravel",
+    "link": "/api/v1/people/8475857"
+},
+{
+    "id": 8476427,
+    "fullName": "Ty Rattie",
+    "link": "/api/v1/people/8476427"
 },
 {
     "id": 8476454,
@@ -2533,11 +2573,6 @@
     "id": 8476457,
     "fullName": "Adam Larsson",
     "link": "/api/v1/people/8476457"
-},
-{
-    "id": 8476458,
-    "fullName": "Ryan Strome",
-    "link": "/api/v1/people/8476458"
 },
 {
     "id": 8476472,
@@ -2570,11 +2605,6 @@
     "link": "/api/v1/people/8478402"
 },
 {
-    "id": 8478442,
-    "fullName": "Cooper Marody",
-    "link": "/api/v1/people/8478442"
-},
-{
     "id": 8479344,
     "fullName": "Jesse Puljujarvi",
     "link": "/api/v1/people/8479344"
@@ -2585,19 +2615,14 @@
     "link": "/api/v1/people/8479465"
 },
 {
-    "id": 8479977,
-    "fullName": "Kailer Yamamoto",
-    "link": "/api/v1/people/8479977"
+    "id": 8479466,
+    "fullName": "Patrick Russell",
+    "link": "/api/v1/people/8479466"
 },
 {
-    "id": 8480803,
-    "fullName": "Evan Bouchard",
-    "link": "/api/v1/people/8480803"
-},
-{
-    "id": 8471303,
-    "fullName": "Alexander Edler",
-    "link": "/api/v1/people/8471303"
+    "id": 8474091,
+    "fullName": "Brandon Sutter",
+    "link": "/api/v1/people/8474091"
 },
 {
     "id": 8474291,
@@ -2605,19 +2630,19 @@
     "link": "/api/v1/people/8474291"
 },
 {
-    "id": 8475195,
-    "fullName": "Anders Nilsson",
-    "link": "/api/v1/people/8475195"
-},
-{
     "id": 8476466,
     "fullName": "Sven Baertschi",
     "link": "/api/v1/people/8476466"
 },
 {
-    "id": 8477967,
-    "fullName": "Thatcher Demko",
-    "link": "/api/v1/people/8477967"
+    "id": 8478444,
+    "fullName": "Brock Boeser",
+    "link": "/api/v1/people/8478444"
+},
+{
+    "id": 8476867,
+    "fullName": "Brendan Gaunce",
+    "link": "/api/v1/people/8476867"
 },
 {
     "id": 8470626,
@@ -2625,19 +2650,14 @@
     "link": "/api/v1/people/8470626"
 },
 {
+    "id": 8471303,
+    "fullName": "Alexander Edler",
+    "link": "/api/v1/people/8471303"
+},
+{
     "id": 8473415,
     "fullName": "Alex Biega",
     "link": "/api/v1/people/8473415"
-},
-{
-    "id": 8473614,
-    "fullName": "Richard Bachman",
-    "link": "/api/v1/people/8473614"
-},
-{
-    "id": 8474091,
-    "fullName": "Brandon Sutter",
-    "link": "/api/v1/people/8474091"
 },
 {
     "id": 8474584,
@@ -2653,6 +2673,11 @@
     "id": 8474849,
     "fullName": "Antoine Roussel",
     "link": "/api/v1/people/8474849"
+},
+{
+    "id": 8475195,
+    "fullName": "Anders Nilsson",
+    "link": "/api/v1/people/8475195"
 },
 {
     "id": 8475690,
@@ -2710,16 +2735,6 @@
     "link": "/api/v1/people/8477958"
 },
 {
-    "id": 8478444,
-    "fullName": "Brock Boeser",
-    "link": "/api/v1/people/8478444"
-},
-{
-    "id": 8478465,
-    "fullName": "Guillaume Brisebois",
-    "link": "/api/v1/people/8478465"
-},
-{
     "id": 8478874,
     "fullName": "Adam Gaudette",
     "link": "/api/v1/people/8478874"
@@ -2745,19 +2760,19 @@
     "link": "/api/v1/people/8470622"
 },
 {
+    "id": 8475764,
+    "fullName": "Cam Fowler",
+    "link": "/api/v1/people/8475764"
+},
+{
+    "id": 8476854,
+    "fullName": "Hampus Lindholm",
+    "link": "/api/v1/people/8476854"
+},
+{
     "id": 8477240,
     "fullName": "Carter Rowney",
     "link": "/api/v1/people/8477240"
-},
-{
-    "id": 8478131,
-    "fullName": "Ondrej Kase",
-    "link": "/api/v1/people/8478131"
-},
-{
-    "id": 8480031,
-    "fullName": "Max Comtois",
-    "link": "/api/v1/people/8480031"
 },
 {
     "id": 8473560,
@@ -2785,11 +2800,6 @@
     "link": "/api/v1/people/8471699"
 },
 {
-    "id": 8474568,
-    "fullName": "Luke Schenn",
-    "link": "/api/v1/people/8474568"
-},
-{
     "id": 8474641,
     "fullName": "Adam Henrique",
     "link": "/api/v1/people/8474641"
@@ -2798,11 +2808,6 @@
     "id": 8475164,
     "fullName": "Jakob Silfverberg",
     "link": "/api/v1/people/8475164"
-},
-{
-    "id": 8475764,
-    "fullName": "Cam Fowler",
-    "link": "/api/v1/people/8475764"
 },
 {
     "id": 8476043,
@@ -2835,19 +2840,19 @@
     "link": "/api/v1/people/8476483"
 },
 {
-    "id": 8476854,
-    "fullName": "Hampus Lindholm",
-    "link": "/api/v1/people/8476854"
-},
-{
     "id": 8476857,
     "fullName": "Pontus Aberg",
     "link": "/api/v1/people/8476857"
 },
 {
-    "id": 8477010,
-    "fullName": "Joseph Blandisi",
-    "link": "/api/v1/people/8477010"
+    "id": 8477009,
+    "fullName": "Jake Dotchin",
+    "link": "/api/v1/people/8477009"
+},
+{
+    "id": 8477205,
+    "fullName": "Andrej Sustr",
+    "link": "/api/v1/people/8477205"
 },
 {
     "id": 8477941,
@@ -2855,9 +2860,19 @@
     "link": "/api/v1/people/8477941"
 },
 {
+    "id": 8477969,
+    "fullName": "Marcus Pettersson",
+    "link": "/api/v1/people/8477969"
+},
+{
     "id": 8477986,
     "fullName": "Brandon Montour",
     "link": "/api/v1/people/8477986"
+},
+{
+    "id": 8478131,
+    "fullName": "Ondrej Kase",
+    "link": "/api/v1/people/8478131"
 },
 {
     "id": 8478491,
@@ -2865,9 +2880,9 @@
     "link": "/api/v1/people/8478491"
 },
 {
-    "id": 8479351,
-    "fullName": "Sam Steel",
-    "link": "/api/v1/people/8479351"
+    "id": 8479290,
+    "fullName": "Kalle Kossila",
+    "link": "/api/v1/people/8479290"
 },
 {
     "id": 8480748,
@@ -2875,9 +2890,9 @@
     "link": "/api/v1/people/8480748"
 },
 {
-    "id": 8480806,
-    "fullName": "Isac Lundestrom",
-    "link": "/api/v1/people/8480806"
+    "id": 8470760,
+    "fullName": "Marc Methot",
+    "link": "/api/v1/people/8470760"
 },
 {
     "id": 8471691,
@@ -2885,19 +2900,29 @@
     "link": "/api/v1/people/8471691"
 },
 {
+    "id": 8471750,
+    "fullName": "Ben Bishop",
+    "link": "/api/v1/people/8471750"
+},
+{
     "id": 8475730,
     "fullName": "Stephen Johns",
     "link": "/api/v1/people/8475730"
 },
 {
+    "id": 8475906,
+    "fullName": "John Klingberg",
+    "link": "/api/v1/people/8475906"
+},
+{
+    "id": 8476941,
+    "fullName": "Connor Carrick",
+    "link": "/api/v1/people/8476941"
+},
+{
     "id": 8469455,
     "fullName": "Jason Spezza",
     "link": "/api/v1/people/8469455"
-},
-{
-    "id": 8470760,
-    "fullName": "Marc Methot",
-    "link": "/api/v1/people/8470760"
 },
 {
     "id": 8471228,
@@ -2920,19 +2945,9 @@
     "link": "/api/v1/people/8471418"
 },
 {
-    "id": 8471750,
-    "fullName": "Ben Bishop",
-    "link": "/api/v1/people/8471750"
-},
-{
     "id": 8473994,
     "fullName": "Jamie Benn",
     "link": "/api/v1/people/8473994"
-},
-{
-    "id": 8475413,
-    "fullName": "Justin Dowling",
-    "link": "/api/v1/people/8475413"
 },
 {
     "id": 8475752,
@@ -2945,9 +2960,9 @@
     "link": "/api/v1/people/8475794"
 },
 {
-    "id": 8475906,
-    "fullName": "John Klingberg",
-    "link": "/api/v1/people/8475906"
+    "id": 8476166,
+    "fullName": "Taylor Fedun",
+    "link": "/api/v1/people/8476166"
 },
 {
     "id": 8476439,
@@ -2970,11 +2985,6 @@
     "link": "/api/v1/people/8476913"
 },
 {
-    "id": 8476941,
-    "fullName": "Connor Carrick",
-    "link": "/api/v1/people/8476941"
-},
-{
     "id": 8476966,
     "fullName": "Gemel Smith",
     "link": "/api/v1/people/8476966"
@@ -2995,14 +3005,44 @@
     "link": "/api/v1/people/8477501"
 },
 {
+    "id": 8477810,
+    "fullName": "Joel Hanley",
+    "link": "/api/v1/people/8477810"
+},
+{
     "id": 8477945,
     "fullName": "Julius Honka",
     "link": "/api/v1/people/8477945"
 },
 {
+    "id": 8478449,
+    "fullName": "Roope Hintz",
+    "link": "/api/v1/people/8478449"
+},
+{
+    "id": 8479016,
+    "fullName": "Landon Bow",
+    "link": "/api/v1/people/8479016"
+},
+{
     "id": 8480036,
     "fullName": "Miro Heiskanen",
     "link": "/api/v1/people/8480036"
+},
+{
+    "id": 8471734,
+    "fullName": "Jonathan Quick",
+    "link": "/api/v1/people/8471734"
+},
+{
+    "id": 8474176,
+    "fullName": "Carl Hagelin",
+    "link": "/api/v1/people/8474176"
+},
+{
+    "id": 8475789,
+    "fullName": "Jack Campbell",
+    "link": "/api/v1/people/8475789"
 },
 {
     "id": 8477380,
@@ -3045,11 +3085,6 @@
     "link": "/api/v1/people/8471685"
 },
 {
-    "id": 8471734,
-    "fullName": "Jonathan Quick",
-    "link": "/api/v1/people/8471734"
-},
-{
     "id": 8473453,
     "fullName": "Trevor Lewis",
     "link": "/api/v1/people/8473453"
@@ -3085,19 +3120,14 @@
     "link": "/api/v1/people/8475762"
 },
 {
-    "id": 8475789,
-    "fullName": "Jack Campbell",
-    "link": "/api/v1/people/8475789"
-},
-{
-    "id": 8476871,
-    "fullName": "Tanner Pearson",
-    "link": "/api/v1/people/8476871"
-},
-{
     "id": 8476983,
     "fullName": "Paul LaDue",
     "link": "/api/v1/people/8476983"
+},
+{
+    "id": 8477361,
+    "fullName": "Calvin Petersen",
+    "link": "/api/v1/people/8477361"
 },
 {
     "id": 8477960,
@@ -3105,9 +3135,19 @@
     "link": "/api/v1/people/8477960"
 },
 {
+    "id": 8478020,
+    "fullName": "Michael Amadio",
+    "link": "/api/v1/people/8478020"
+},
+{
     "id": 8478455,
     "fullName": "Austin Wagner",
     "link": "/api/v1/people/8478455"
+},
+{
+    "id": 8479644,
+    "fullName": "Matt Luff",
+    "link": "/api/v1/people/8479644"
 },
 {
     "id": 8480113,
@@ -3120,9 +3160,9 @@
     "link": "/api/v1/people/8480147"
 },
 {
-    "id": 8480336,
-    "fullName": "Sean Walker",
-    "link": "/api/v1/people/8480336"
+    "id": 8480776,
+    "fullName": "Sheldon Rempal",
+    "link": "/api/v1/people/8480776"
 },
 {
     "id": 8466138,
@@ -3215,11 +3255,6 @@
     "link": "/api/v1/people/8477922"
 },
 {
-    "id": 8478078,
-    "fullName": "Rourke Chartier",
-    "link": "/api/v1/people/8478078"
-},
-{
     "id": 8478099,
     "fullName": "Kevin Labanc",
     "link": "/api/v1/people/8478099"
@@ -3230,19 +3265,24 @@
     "link": "/api/v1/people/8478414"
 },
 {
-    "id": 8479580,
-    "fullName": "Dylan Gambrell",
-    "link": "/api/v1/people/8479580"
-},
-{
     "id": 8480160,
     "fullName": "Radim Simek",
     "link": "/api/v1/people/8480160"
 },
 {
+    "id": 8480780,
+    "fullName": "Lukas Radil",
+    "link": "/api/v1/people/8480780"
+},
+{
     "id": 8480965,
     "fullName": "Antti Suomela",
     "link": "/api/v1/people/8480965"
+},
+{
+    "id": 8477947,
+    "fullName": "Sonny Milano",
+    "link": "/api/v1/people/8477947"
 },
 {
     "id": 8471273,
@@ -3278,11 +3318,6 @@
     "id": 8476310,
     "fullName": "Lukas Sedlak",
     "link": "/api/v1/people/8476310"
-},
-{
-    "id": 8476431,
-    "fullName": "Adam Clendening",
-    "link": "/api/v1/people/8476431"
 },
 {
     "id": 8476432,
@@ -3330,11 +3365,6 @@
     "link": "/api/v1/people/8477505"
 },
 {
-    "id": 8477947,
-    "fullName": "Sonny Milano",
-    "link": "/api/v1/people/8477947"
-},
-{
     "id": 8478460,
     "fullName": "Zach Werenski",
     "link": "/api/v1/people/8478460"
@@ -3363,6 +3393,11 @@
     "id": 8479400,
     "fullName": "Pierre-Luc Dubois",
     "link": "/api/v1/people/8479400"
+},
+{
+    "id": 8478039,
+    "fullName": "Kaapo Kahkonen",
+    "link": "/api/v1/people/8478039"
 },
 {
     "id": 8468611,
@@ -3445,11 +3480,6 @@
     "link": "/api/v1/people/8475799"
 },
 {
-    "id": 8476177,
-    "fullName": "Matt Read",
-    "link": "/api/v1/people/8476177"
-},
-{
     "id": 8476372,
     "fullName": "Nick Seeler",
     "link": "/api/v1/people/8476372"
@@ -3480,6 +3510,11 @@
     "link": "/api/v1/people/8478493"
 },
 {
+    "id": 8475179,
+    "fullName": "Dmitry Kulikov",
+    "link": "/api/v1/people/8475179"
+},
+{
     "id": 8470834,
     "fullName": "Dustin Byfuglien",
     "link": "/api/v1/people/8470834"
@@ -3503,11 +3538,6 @@
     "id": 8474574,
     "fullName": "Tyler Myers",
     "link": "/api/v1/people/8474574"
-},
-{
-    "id": 8475179,
-    "fullName": "Dmitry Kulikov",
-    "link": "/api/v1/people/8475179"
 },
 {
     "id": 8475279,
@@ -3580,6 +3610,11 @@
     "link": "/api/v1/people/8478458"
 },
 {
+    "id": 8478915,
+    "fullName": "Sami Niku",
+    "link": "/api/v1/people/8478915"
+},
+{
     "id": 8479293,
     "fullName": "Brandon Tanev",
     "link": "/api/v1/people/8479293"
@@ -3590,14 +3625,19 @@
     "link": "/api/v1/people/8479339"
 },
 {
+    "id": 8474218,
+    "fullName": "Jason Demers",
+    "link": "/api/v1/people/8474218"
+},
+{
+    "id": 8475311,
+    "fullName": "Darcy Kuemper",
+    "link": "/api/v1/people/8475311"
+},
+{
     "id": 8477989,
     "fullName": "Christian Dvorak",
     "link": "/api/v1/people/8477989"
-},
-{
-    "id": 8479345,
-    "fullName": "Jakob Chychrun",
-    "link": "/api/v1/people/8479345"
 },
 {
     "id": 8470755,
@@ -3620,9 +3660,9 @@
     "link": "/api/v1/people/8473546"
 },
 {
-    "id": 8474218,
-    "fullName": "Jason Demers",
-    "link": "/api/v1/people/8474218"
+    "id": 8474131,
+    "fullName": "Mario Kempe",
+    "link": "/api/v1/people/8474131"
 },
 {
     "id": 8474613,
@@ -3643,11 +3683,6 @@
     "id": 8475246,
     "fullName": "Kevin Connauton",
     "link": "/api/v1/people/8475246"
-},
-{
-    "id": 8475311,
-    "fullName": "Darcy Kuemper",
-    "link": "/api/v1/people/8475311"
 },
 {
     "id": 8476326,
@@ -3680,9 +3715,9 @@
     "link": "/api/v1/people/8477851"
 },
 {
-    "id": 8477943,
-    "fullName": "Brendan Perlini",
-    "link": "/api/v1/people/8477943"
+    "id": 8477951,
+    "fullName": "Nick Schmaltz",
+    "link": "/api/v1/people/8477951"
 },
 {
     "id": 8478432,
@@ -3690,19 +3725,24 @@
     "link": "/api/v1/people/8478432"
 },
 {
-    "id": 8478440,
-    "fullName": "Dylan Strome",
-    "link": "/api/v1/people/8478440"
-},
-{
     "id": 8478474,
     "fullName": "Lawson Crouse",
     "link": "/api/v1/people/8478474"
 },
 {
+    "id": 8478499,
+    "fullName": "Adin Hill",
+    "link": "/api/v1/people/8478499"
+},
+{
     "id": 8479343,
     "fullName": "Clayton Keller",
     "link": "/api/v1/people/8479343"
+},
+{
+    "id": 8479345,
+    "fullName": "Jakob Chychrun",
+    "link": "/api/v1/people/8479345"
 },
 {
     "id": 8480950,
@@ -3713,6 +3753,11 @@
     "id": 8471669,
     "fullName": "Paul Stastny",
     "link": "/api/v1/people/8471669"
+},
+{
+    "id": 8475287,
+    "fullName": "Erik Haula",
+    "link": "/api/v1/people/8475287"
 },
 {
     "id": 8468674,
@@ -3755,11 +3800,6 @@
     "link": "/api/v1/people/8475236"
 },
 {
-    "id": 8475287,
-    "fullName": "Erik Haula",
-    "link": "/api/v1/people/8475287"
-},
-{
     "id": 8475715,
     "fullName": "Oscar Lindberg",
     "link": "/api/v1/people/8475715"
@@ -3785,11 +3825,6 @@
     "link": "/api/v1/people/8476539"
 },
 {
-    "id": 8476617,
-    "fullName": "Tomas Hyka",
-    "link": "/api/v1/people/8476617"
-},
-{
     "id": 8476779,
     "fullName": "Brad Hunt",
     "link": "/api/v1/people/8476779"
@@ -3798,6 +3833,11 @@
     "id": 8476876,
     "fullName": "Malcolm Subban",
     "link": "/api/v1/people/8476876"
+},
+{
+    "id": 8477220,
+    "fullName": "Nate Schmidt",
+    "link": "/api/v1/people/8477220"
 },
 {
     "id": 8477447,
@@ -3813,6 +3853,11 @@
     "id": 8477846,
     "fullName": "Ryan Carpenter",
     "link": "/api/v1/people/8477846"
+},
+{
+    "id": 8477901,
+    "fullName": "Daniel Carr",
+    "link": "/api/v1/people/8477901"
 },
 {
     "id": 8477930,

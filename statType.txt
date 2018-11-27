@@ -87,6 +87,38 @@ homeAndAway - cumulative stats sheet of entire current season for home and away 
 
 homeAndAwayPlayoffs - cumulative stats sheet of entire playoffs for home and away games
 
+winLoss - cumulative stats for current regular season when team won, loss, loss ot
+
+winLossPlayoffs - cumulative stats for current playoffs when team won, loss, loss ot
+
+onPaceRegularSeason - on pace stats for current regular season
+
+regularSeasonStatRankings - stat rankings for current regular season
+
+playoffStatRankings - stat rankings for current playoffs
+
+goalsByGameSituation - goals in different game situations for current regular season 
+      Ex: 
+                  "goalsInFirstPeriod": 6,
+                  "goalsInSecondPeriod": 2,
+                  "goalsInThirdPeriod": 3,
+                  "gameWinningGoals": 1,
+                  "emptyNetGoals": 0,
+                  "shootOutGoals": 0,
+                  "shootOutShots": 1,
+                  "goalsTrailingByOne": 2,
+                  "goalsTrailingByThreePlus": 2,
+                  "goalsWhenTied": 4,
+                  "goalsLeadingByOne": 2,
+                  "goalsLeadingByTwo": 1,
+                  "penaltyGoals": 0,
+                  "penaltyShots": 0
+
+goalsByGameSituationPlayoffs - goals in different game situations for current playoffs
+
+statsSingleSeason - cumulative regular season stats for a single season (default: current season)
+
+statsSingleSeasonPlayoffs - cumulative playoffs stats for a single season (default: current playoffs)
 
 
 
