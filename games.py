@@ -5,7 +5,7 @@ import datetime
 
 # TODO
 def getTeamId():
-	
+
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/teams/")
 
 	if (response.status_code != 404):
@@ -33,13 +33,17 @@ def getLiveGameInfo(gameID):
 
 	period = data["liveData"]["linescore"]["currentPeriod"]
 
+	if period == 3 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
+		 period = "Final"
+
+
 	goalsAway = data["liveData"]["linescore"]["teams"]["away"]["goals"]
 	goalsHome = data["liveData"]["linescore"]["teams"]["home"]["goals"]
 
 	shotsAway = data["liveData"]["linescore"]["teams"]["away"]["shotsOnGoal"]
 	shotsHome = data["liveData"]["linescore"]["teams"]["home"]["shotsOnGoal"]
 
-	# END = 0:00, FINAL = end of game 
+	# END = 0:00, FINAL = end of game
 	#currentTime = data["liveData"]["linescore"]["currentPeriodTimeRemaining"]
 
 
@@ -48,9 +52,9 @@ def getLiveGameInfo(gameID):
 	if period > 0:
 		#print("Period %s\nShots: %s: %s %s: %s" % (period, teamAway, shotsAway, teamHome, shotsHome ))
 		#print("Period %s" % period)
-		print("Period %s %s %s %s %s" % (period, teamAwayAbrv, goalsAway, teamHomeAbrv, goalsHome))
+		print("%s %s %s %s | %s" % (teamAwayAbrv, goalsAway, teamHomeAbrv, goalsHome, period))
 	else:
-		print("Game not yet started.")
+		print("%s %s %s %s | %s" % (teamAwayAbrv, "-", teamHomeAbrv, "-", "Not Started"))
 
 	# WAT
 def getCurrentTime(gameID):
@@ -66,7 +70,7 @@ def getGamesToday():
 
 	gamesAmt = data["totalItems"]
 
-	print(gamesAmt)
+	print("%s games today." % gamesAmt)
 
 	gamesList = []
 
@@ -77,6 +81,7 @@ def getGamesToday():
 
 def getGameScoresToday(gamesList):
 	for games in gamesList:
+		#print(games)
 		getLiveGameInfo(games)
 
 # Test
@@ -85,4 +90,3 @@ print(datetime.date.today())
 
 glist = getGamesToday()
 getGameScoresToday(glist)
-
