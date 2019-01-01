@@ -33,8 +33,6 @@ def getLiveGameInfo(gameID):
 
 	period = data["liveData"]["linescore"]["currentPeriod"]
 
-	if period == 3 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
-		 period = "Final"
 
 
 	goalsAway = data["liveData"]["linescore"]["teams"]["away"]["goals"]
@@ -52,6 +50,13 @@ def getLiveGameInfo(gameID):
 	if period > 0:
 		#print("Period %s\nShots: %s: %s %s: %s" % (period, teamAway, shotsAway, teamHome, shotsHome ))
 		#print("Period %s" % period)
+		if period == 3 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
+			period = 'Final'
+		if period == 4 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
+			period = 'Final (OT)'
+		if period == 5 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
+			period = 'Final (SO)'
+		
 		print("%s %s %s %s | %s" % (teamAwayAbrv, goalsAway, teamHomeAbrv, goalsHome, period))
 	else:
 		print("%s %s %s %s | %s" % (teamAwayAbrv, "-", teamHomeAbrv, "-", "Not Started"))
