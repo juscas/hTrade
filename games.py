@@ -68,14 +68,16 @@ def getCurrentTime(gameID):
 
 	# returns list of game IDs from the current date (nhl api refreshes at 12:00 EST)
 def getGamesToday():
-
-	response = requests.get("https://statsapi.web.nhl.com/api/v1/schedule")
+	
+	dateToday = datetime.date.today()
+	
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/schedule?date=%s" % dateToday)
 
 	data = response.json()
 
 	gamesAmt = data["totalItems"]
 
-	print("%s games today." % gamesAmt)
+	print("%s\n%s games today." % (dateToday, gamesAmt))
 
 	gamesList = []
 
@@ -90,8 +92,6 @@ def getGameScoresToday(gamesList):
 		getLiveGameInfo(games)
 
 # Test
-
-print(datetime.date.today())
 
 glist = getGamesToday()
 getGameScoresToday(glist)

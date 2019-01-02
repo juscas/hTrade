@@ -37,7 +37,7 @@ def findPlayerId(str1, jsonPlayersFile):
 		return chooseFromList(results)
 
 def enterPlayerName():
-	searchStr = raw_input("Search for a player:")
+	searchStr = input("Search for a player:")
 	return searchStr
 
 def chooseFromList(resultsList):
@@ -48,11 +48,11 @@ def chooseFromList(resultsList):
 
 	choice = -1
 
-	while choice > len(resultsList) or choice < 1:
+	while int(choice) > len(resultsList) or int(choice) < 1:
 		if choice != -1:
 			print("Invalid entry. Input a number corresponding to the desired player.")
 		choice = input("Choose a player:")
-	print("Displaying results for: \n%s\n" % resultsList[choice-1][0])
+	print("Displaying results for: \n%s\n" % resultsList[int(choice)-1][0])
 	return resultsList[int(choice)-1][1]
 
 def getPlayerStatsByType(playerID, statType, season=""):
