@@ -1,0 +1,6 @@
+todo:
+- get name in html
+- format stats
+- see how to compare 2 player
+- fix goalie stats
+- go for a smoke
