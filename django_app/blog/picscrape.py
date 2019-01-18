@@ -1,21 +1,59 @@
-import re, requests
+import re, requests, wget
 from bs4 import BeautifulSoup
+import players
 
 
 
-def getPlayerESPNIDs(pageNo = ""):
+def getPlayerESPNIDs(player):
 
-    data = requests.get("http://www.espn.com/nhl/statistics/player/_/stat/points/sort/points%s" % pageNo)
+    name_not_found = 0
 
-    soup = BeautifulSoup(data.text, 'html.parser')
+    for i in range(0,20):
+        print(i)
 
-    for table in soup.find_all('table', { 'class': 'tablehead' }):
-        values = [a['href'] for a in table.find_all('a', {'href': re.compile(r'id')})]
+        pageNo = i*40+1
 
-    print(len(values))
-    print(values)
+        # for player pictures: 0, for goalie pictures 1
+        if player == 0:
+            if i == 0:
+                data = requests.get("http://www.espn.com/nhl/statistics/player/_/stat/points/sort/points")
+            else:
+                data = requests.get("http://www.espn.com/nhl/statistics/player/_/stat/points/sort/points/count/%s" % pageNo)
+        else:
+            if i == 0:
+                data = requests.get("http://www.espn.com/nhl/statistics/player/_/stat/goaltending/sort/avgGoalsAgainst/qualified/false")
+            else:
+                data = requests.get("http://www.espn.com/nhl/statistics/player/_/stat/goaltending/sort/avgGoalsAgainst/qualified/false/count/%s" % pageNo)
 
 
 
+        soup = BeautifulSoup(data.text, 'html.parser')
 
-getPlayerESPNIDs()
+        for table in soup.find_all('table', { 'class': 'tablehead' }):
+            values = [a['href'] for a in table.find_all('a', {'href': re.compile(r'id')})]
+
+        for value in values:
+            id = re.sub("\D", "", value)
+            name = value[len(id)+37:]
+            name = re.sub("-", " ", name)
+            realID = players.findPlayerId(name, "playerlist.json")
+            print(name)
+
+            if realID == -1:
+                name_not_found += 1
+                realID = name
+
+            testUrl = requests.get("http://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/%s.png" % id)
+
+            if testUrl.status_code == 404:
+                continue
+
+            url = "http://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/%s.png" % id
+            out_filepath = "/home/justin/git-repos/hTrade/pictures/%s" % realID
+            filename = wget.download(url, out_filepath)
+            #print("%s, %s " % (id, name))
+        print("No IDs: %s\n" % name_not_found)
+
+
+
+getPlayerESPNIDs(1)

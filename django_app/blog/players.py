@@ -13,7 +13,7 @@ def findPlayerId(str1, jsonPlayersFile):
 	with open(jsonPlayersFile, 'r') as f:
 		playerListJSON = json.load(f)
 
-	print("Searching for \"%s\"..." % str1)
+	#print("Searching for \"%s\"..." % str1)
 
 	for player in playerListJSON["Players"]:
 		fullName = player["fullName"].lower()
@@ -26,12 +26,12 @@ def findPlayerId(str1, jsonPlayersFile):
 	resultCount = len(results)
 
 	if len(results) == 1:
-		print("Found 1 result... %s" % results[0][0])
+		#print("Found 1 result... %s" % results[0][0])
 		return results[0][1]
 
 	elif len(results) == 0:
 		# exception?
-		print("%s returned no results." % str1)
+		#print("%s returned no results." % str1)
 		return -1
 	else:
 		return chooseFromList(results)
@@ -111,7 +111,7 @@ def getCareerNHLStats(playerID):
 
 # test
 
-print(getPlayerName(8480829))
+# print(getPlayerName(8480829))
 
 # print(getCurrentSeasonPlayerStats(8480829))
 

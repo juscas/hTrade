@@ -3,7 +3,7 @@ import json
 import datetime
 
 def getCurrentTeamIDs():
-	
+
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/teams/")
 	data = response.json()
 
@@ -20,7 +20,7 @@ def getCurrentTeamIDs():
 
 	return idList
 
-def generatePlayerIDJSON(idList, file):
+def activeRosterPlayerIDstoJSON(idList, file):
 
 	f = open(file, 'w')
 
@@ -29,6 +29,30 @@ def generatePlayerIDJSON(idList, file):
 	counter = 0
 
 	for id in idList:
+
+		response = requests.get("https://statsapi.web.nhl.com/api/v1/teams/%s/?expand=team.roster" % id)
+		data = json.loads(response.text)
+
+		for player in data['teams'][0]["roster"]["roster"]:
+			if counter!=0:
+				f.write(",\n")
+			else:
+				counter +=1
+			json.dump(player["person"], f, indent=4)
+
+	f.write("\n]\n}")
+	f.close()
+
+def activePlayerIDsToJSON(idList, file):
+
+	f = open(file, 'w')
+
+	f.write("{\n\t\"Updated\": {\n\"date\": \"%s\"\n },\n\n    \"Players\": [ \n" % datetime.datetime.now())
+
+	counter = 0
+
+	for id in idList:
+
 		response = requests.get("https://statsapi.web.nhl.com/api/v1/teams/%s/?expand=team.roster" % id)
 		data = json.loads(response.text)
 
