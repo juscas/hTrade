@@ -2,8 +2,11 @@ import requests
 import json
 import time
 
-playerStatsTypeList = ["timeOnIce", "assists", "goals", "pim", "shots", "games", "hits", "powerPlayGoals", "powerPlayPoints", "powerPlayTimeOnIce", "evenTimeOnIce", "penaltyMinutes", "faceOffPct", "shotPct", "gameWinningGoals", "overTimeGoals", "shortHandedGoals", "shortHandedPoints", "shortHandedTimeOnIce", "blocked", "plusMinus", "points", "shifts", "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame"]
-goalieStatsTypeList = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 'saves', 'powerPlaySaves', 'shortHandedSaves', 'evenSaves', 'shortHandedShots', 'evenShots', 'powerPlayShots', 'savePercentage', 'goalAgainstAverage', 'games', 'gamesStarted', 'shotsAgainst', 'goalsAgainst', 'timeOnIcePerGame', 'powerPlaySavePercentage', 'shortHandedSavePercentage','evenStrengthSavePercentage']
+PLAYERSTATSTYPELIST = ["timeOnIce", "assists", "goals", "pim", "shots", "games", "hits", "powerPlayGoals", "powerPlayPoints", "powerPlayTimeOnIce", "evenTimeOnIce", "penaltyMinutes", "faceOffPct", "shotPct", "gameWinningGoals", "overTimeGoals", "shortHandedGoals", "shortHandedPoints", "shortHandedTimeOnIce", "blocked", "plusMinus", "points", "shifts", "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame"]
+GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 'saves', 'powerPlaySaves', 'shortHandedSaves', 'evenSaves', 'shortHandedShots', 'evenShots', 'powerPlayShots', 'savePercentage', 'goalAgainstAverage', 'games', 'gamesStarted', 'shotsAgainst', 'goalsAgainst', 'timeOnIcePerGame', 'powerPlaySavePercentage', 'shortHandedSavePercentage','evenStrengthSavePercentage']
+
+PLAYERSFILE = "playerlist.json"
+
 
 def findPlayerId(str1, jsonPlayersFile):
 	results = []
@@ -13,7 +16,7 @@ def findPlayerId(str1, jsonPlayersFile):
 	with open(jsonPlayersFile, 'r') as f:
 		playerListJSON = json.load(f)
 
-	#print("Searching for \"%s\"..." % str1)
+	print("Searching for \"%s\"..." % str1)
 
 	for player in playerListJSON["Players"]:
 		fullName = player["fullName"].lower()
@@ -26,12 +29,12 @@ def findPlayerId(str1, jsonPlayersFile):
 	resultCount = len(results)
 
 	if len(results) == 1:
-		#print("Found 1 result... %s" % results[0][0])
+		print("Found 1 result... %s" % results[0][0])
 		return results[0][1]
 
 	elif len(results) == 0:
 		# exception?
-		#print("%s returned no results." % str1)
+		print("%s returned no results." % str1)
 		return -1
 	else:
 		return chooseFromList(results)
@@ -76,14 +79,7 @@ def getPlayerStatsByType(playerID, statType, season=""):
 	print(goals)
 
 
-def getPlayerName(playerID):
-	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/" % (playerID))
-	data = response.json()
-	name = data["people"][0]["fullName"]
-	return name
-
-
-# TODO: Add a check for goalies and use goalie stattypelist
+# TODO: Add a check for goalies and use goalei stattypelist for those
 def getCurrentSeasonPlayerStats(playerID):
 	if playerID == -1:
 		# print("No player ID.")
@@ -91,18 +87,28 @@ def getCurrentSeasonPlayerStats(playerID):
 
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason" % (playerID))
 	data = response.json()
+
+	if (response.status_code != 404):
+		print("GET Request successful (%s)" % response.status_code)
+	else:
+		print("GET Request ERROR (%s)" % response.status_code)
+		return
+
 	stats = data["stats"][0]["splits"][0]["stat"]
 
-	results = {}
-	results["name"] = getPlayerName(playerID)
+	results = []
 
-	for i in range(0, len(playerStatsTypeList)):
-		results[playerStatsTypeList[i]] = stats[playerStatsTypeList[i]]
-		#print("%-30s %-4s" % (playerStatsTypeList[i], stats[playerStatsTypeList[i]]))
+	if len(stats) == 27:
+		for i in range(0, len(PLAYERSTATSTYPELIST)):
+			results.append([PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]])
+			# print("%-30s %-4s" % (PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]))
 
-	results_dict = []
-	results_dict.append(results.copy())
-	return results_dict;
+	elif len(stats) == 23:
+ 		for i in range(0, len(GOALIESTATSTYPELIST)):
+ 			results.append([GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]])
+ 			# print("%-30s %-4s" % (GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]))
+
+	return results;
 
 
 # statType: "yearByYear"
@@ -111,8 +117,5 @@ def getCareerNHLStats(playerID):
 
 # test
 
-# print(getPlayerName(8480829))
-
-# print(getCurrentSeasonPlayerStats(8480829))
-
 # getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json"))
+# print(getCurrentSeasonPlayerStats(8480965))

@@ -11,3 +11,6 @@ def home(request):
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
+
+def player(request):
+    return render(request, 'blog/player.html', {'title': 'Player'})
