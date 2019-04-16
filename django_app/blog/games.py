@@ -3,6 +3,10 @@ import json
 import time
 import datetime
 
+YESTERDAY = datetime.date.today() - datetime.timedelta(1)
+TODAY = datetime.date.today()
+TOMORROW = datetime.date.today() + datetime.timedelta(1)
+
 # TODO
 def getTeamId():
 
@@ -56,7 +60,7 @@ def getLiveGameInfo(gameID):
 			period = 'Final (OT)'
 		if period == 5 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
 			period = 'Final (SO)'
-		
+
 		print("%s %s %s %s | %s" % (teamAwayAbrv, goalsAway, teamHomeAbrv, goalsHome, period))
 	else:
 		print("%s %s %s %s | %s" % (teamAwayAbrv, "-", teamHomeAbrv, "-", "Not Started"))
@@ -67,17 +71,17 @@ def getCurrentTime(gameID):
 
 
 	# returns list of game IDs from the current date (nhl api refreshes at 12:00 EST)
-def getGamesToday():
-	
-	dateToday = datetime.date.today()
-	
-	response = requests.get("https://statsapi.web.nhl.com/api/v1/schedule?date=%s" % dateToday)
+def getGamesToday(day):
+
+	#dateToday = datetime.date.today()
+
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/schedule?date=%s" % day)
 
 	data = response.json()
 
 	gamesAmt = data["totalItems"]
 
-	print("%s\n%s games today." % (dateToday, gamesAmt))
+	# print("%s\n%s games today." % (day, gamesAmt))
 
 	gamesList = []
 
@@ -91,7 +95,29 @@ def getGameScoresToday(gamesList):
 		#print(games)
 		getLiveGameInfo(games)
 
-# Test
+def get3DayGames():
+	yes = getGamesToday(YESTERDAY)
+	tod = getGamesToday(TODAY)
+	tom = getGamesToday(TOMORROW)
+	print("Yesterday (%s)" % YESTERDAY)
+	for games in yes:
+		#print(games)
+		getLiveGameInfo(games)
+	print("\nToday (%s)" % TODAY)
+	for games in tod:
+		#print(games)
+		getLiveGameInfo(games)
+	print("\nTomorrow (%s)" % TOMORROW)
+	for games in tom:
+		#print(games)
+		getLiveGameInfo(games)
 
-glist = getGamesToday()
-getGameScoresToday(glist)
+# Test
+#glist1 = getGamesToday(YESTERDAY)
+#glist2 = getGamesToday(TODAY)
+#glist3 = getGamesToday(TOMORROW)
+
+#list = glist1 + glist2 + glist3
+#getGameScoresToday(list)
+
+get3DayGames()

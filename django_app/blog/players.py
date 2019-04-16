@@ -1,6 +1,7 @@
 import requests
 import json
 import time
+from colorama import Fore, Style
 
 PLAYERSTATSTYPELIST = ["timeOnIce", "assists", "goals", "pim", "shots", "games", "hits", "powerPlayGoals", "powerPlayPoints", "powerPlayTimeOnIce", "evenTimeOnIce", "penaltyMinutes", "faceOffPct", "shotPct", "gameWinningGoals", "overTimeGoals", "shortHandedGoals", "shortHandedPoints", "shortHandedTimeOnIce", "blocked", "plusMinus", "points", "shifts", "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame"]
 GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 'saves', 'powerPlaySaves', 'shortHandedSaves', 'evenSaves', 'shortHandedShots', 'evenShots', 'powerPlayShots', 'savePercentage', 'goalAgainstAverage', 'games', 'gamesStarted', 'shotsAgainst', 'goalsAgainst', 'timeOnIcePerGame', 'powerPlaySavePercentage', 'shortHandedSavePercentage','evenStrengthSavePercentage']
@@ -101,14 +102,27 @@ def getCurrentSeasonPlayerStats(playerID):
 	if len(stats) == 27:
 		for i in range(0, len(PLAYERSTATSTYPELIST)):
 			results.append([PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]])
-			# print("%-30s %-4s" % (PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]))
+			#print("%-30s %-4s" % (PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]))
 
 	elif len(stats) == 23:
  		for i in range(0, len(GOALIESTATSTYPELIST)):
  			results.append([GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]])
- 			# print("%-30s %-4s" % (GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]))
+ 			#print("%-30s %-4s" % (GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]))
 
 	return results;
+
+def compare(pID1, pID2):
+	stats1 = getCurrentSeasonPlayerStats(pID1)
+	stats2 = getCurrentSeasonPlayerStats(pID2)
+
+	if (len(stats1) != len(stats2)):
+		print("Cannot compare two different player types.")
+		return 0
+
+	for i in range(len(stats1)):
+		print(stats1[i][0])
+		print(stats2[i][0])
+
 
 
 # statType: "yearByYear"
@@ -118,4 +132,7 @@ def getCareerNHLStats(playerID):
 # test
 
 # getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json"))
+id1 = findPlayerId(enterPlayerName(), "playerlist.json")
+id2 = findPlayerId(enterPlayerName(), "playerlist.json")
+compare(id1,id2)
 # print(getCurrentSeasonPlayerStats(8480965))
