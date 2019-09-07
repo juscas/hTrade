@@ -1,7 +1,6 @@
 import requests
 import json
 import time
-from colorama import Fore, Style
 
 PLAYERSTATSTYPELIST = ["timeOnIce", "assists", "goals", "pim", "shots", "games", "hits", "powerPlayGoals", "powerPlayPoints", "powerPlayTimeOnIce", "evenTimeOnIce", "penaltyMinutes", "faceOffPct", "shotPct", "gameWinningGoals", "overTimeGoals", "shortHandedGoals", "shortHandedPoints", "shortHandedTimeOnIce", "blocked", "plusMinus", "points", "shifts", "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame"]
 GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 'saves', 'powerPlaySaves', 'shortHandedSaves', 'evenSaves', 'shortHandedShots', 'evenShots', 'powerPlayShots', 'savePercentage', 'goalAgainstAverage', 'games', 'gamesStarted', 'shotsAgainst', 'goalsAgainst', 'timeOnIcePerGame', 'powerPlaySavePercentage', 'shortHandedSavePercentage','evenStrengthSavePercentage']
@@ -59,12 +58,15 @@ def chooseFromList(resultsList):
 	print("Displaying results for: \n%s\n" % resultsList[int(choice)-1][0])
 	return resultsList[int(choice)-1][1]
 
-def getPlayerStatsByType(playerID, statType, season=""):
+def getPlayerStatsByType(playerID, statType="", season=""):
+
+	if statType == "":
+		getCurrentSeasonPlayerStats(playerID)
 
 	# exception?
 	if playerID == -1:
 		# print("No player ID.")
-		return -1;
+		return -1
 
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=%s&season=%s" % (playerID, statType, season))
 	data = response.json()
@@ -84,9 +86,9 @@ def getPlayerStatsByType(playerID, statType, season=""):
 def getCurrentSeasonPlayerStats(playerID):
 	if playerID == -1:
 		# print("No player ID.")
-		return -1;
+		return -1
 
-	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason" % (playerID))
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20182019" % (playerID))
 	data = response.json()
 
 	if (response.status_code != 404):
@@ -102,14 +104,14 @@ def getCurrentSeasonPlayerStats(playerID):
 	if len(stats) == 27:
 		for i in range(0, len(PLAYERSTATSTYPELIST)):
 			results.append([PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]])
-			#print("%-30s %-4s" % (PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]))
+			# print("%-30s %-4s" % (PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]))
 
 	elif len(stats) == 23:
  		for i in range(0, len(GOALIESTATSTYPELIST)):
  			results.append([GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]])
- 			#print("%-30s %-4s" % (GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]))
+ 			# print("%-30s %-4s" % (GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]))
 
-	return results;
+	return results
 
 def compare(pID1, pID2):
 	stats1 = getCurrentSeasonPlayerStats(pID1)
@@ -120,9 +122,7 @@ def compare(pID1, pID2):
 		return 0
 
 	for i in range(len(stats1)):
-		print(stats1[i][0])
-		print(stats2[i][0])
-
+		print("%-30s %-10s %-4s" % (stats1[i][0], stats1[i][1], stats2[i][1]))
 
 
 # statType: "yearByYear"
@@ -132,7 +132,8 @@ def getCareerNHLStats(playerID):
 # test
 
 # getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json"))
+# getPlayerStatsByType(findPlayerId)
 id1 = findPlayerId(enterPlayerName(), "playerlist.json")
 id2 = findPlayerId(enterPlayerName(), "playerlist.json")
 compare(id1,id2)
-# print(getCurrentSeasonPlayerStats(8480965))
+# print(getCurrentSeasonPlayerStats(id1))

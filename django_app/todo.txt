@@ -1,8 +1,0 @@
-todo:
-- refactor fetching of player IDs from nhl.com instead of ESPN + implement daily refresh for playerlist.json
-- see how to compare 2 player
-- go for a smoke
-
-down the line:
-- add inactive players to player list
-- add reddit posts to player pages
