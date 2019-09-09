@@ -45,9 +45,12 @@ def formatStatsString(statsList):
 # def formatAdvancedStats():
 
 def sendToOBSFolder(statsList):
-	# delete old picture in folder
+	
 	cwd = os.getcwd()
 	picDestDir = cwd + "/OBSPointers/Team/team_pic.png"
+	statDestDir = cwd + "/OBSPointers/Team/team_stats.txt"
+
+	# delete old picture in folder
 	os.remove(picDestDir)
 
 	# copy picture from assets folder to OBS pointers folder to send to OBS
@@ -56,8 +59,12 @@ def sendToOBSFolder(statsList):
 
 	# write stats string to stats text file to send to OBS
 	statsString = formatStatsString(statsList)
+	f = open(statDestDir, "w")
+	f.write(statsString)
+	f.close()
 
 
-sendToOBSFolder(getTeamStats(8))
+
+sendToOBSFolder(getTeamStats(24))
 
 # print(formatBasicStats(getTeamStats(8)))

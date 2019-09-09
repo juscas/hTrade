@@ -1,8 +1,8 @@
-Montréal Canadiens
-(44-30-8)
+Anaheim Ducks
+(35-37-10)
 GP        82
-Points    96
-GF/GP     3.0
-GA/GP     2.878
-PP%      13.2
-PK%      80.9
+Points    80
+GF/GP    2.39
+GA/GP     3.024
+PP%      17.0
+PK%      79.7
