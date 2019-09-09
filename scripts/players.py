@@ -7,7 +7,6 @@ GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 
 
 PLAYERSFILE = "playerlist.json"
 
-
 def findPlayerId(str1, jsonPlayersFile):
 	results = []
 
@@ -128,12 +127,31 @@ def compare(pID1, pID2):
 # statType: "yearByYear"
 def getCareerNHLStats(playerID):
 	return
+# PLAYERSTATSTYPELIST = ["timeOnIce", "assists", "goals", "pim", "shots", "games", "hits", "powerPlayGoals", "powerPlayPoints",
+#  "powerPlayTimeOnIce", "evenTimeOnIce", "penaltyMinutes", "faceOffPct", "shotPct", "gameWinningGoals", "overTimeGoals", 
+# "shortHandedGoals", "shortHandedPoints", "shortHandedTimeOnIce", "blocked", "plusMinus", "points", "shifts", 
+# "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame"]
+#GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 'saves', 'powerPlaySaves', 'shortHandedSaves',
+#  'evenSaves', 'shortHandedShots', 'evenShots', 'powerPlayShots', 'savePercentage', 'goalAgainstAverage', 'games', 
+# 'gamesStarted', 'shotsAgainst', 'goalsAgainst', 'timeOnIcePerGame', 'powerPlaySavePercentage', 'shortHandedSavePercentage',
+# 'evenStrengthSavePercentage']
+
+def formatStatsString(statsList):
+	print(len(statsList))
+	# if current is a player
+	if len(statsList) == 26:
+		statsStr = "Points   {}\n".format(statsList[1][1])
+		
+	# if current is a goalie
+	elif len(statsList) == 22:
+ 		statsStr = "Points   {}\n".format(statsList[1][1])
+	return statsStr
 
 # test
 
-# getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json"))
+print(formatStatsString(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json"))))
 # getPlayerStatsByType(findPlayerId)
-id1 = findPlayerId(enterPlayerName(), "playerlist.json")
-id2 = findPlayerId(enterPlayerName(), "playerlist.json")
-compare(id1,id2)
+# id1 = findPlayerId(enterPlayerName(), "playerlist.json")
+# id2 = findPlayerId(enterPlayerName(), "playerlist.json")
+# compare(id1,id2)
 # print(getCurrentSeasonPlayerStats(id1))

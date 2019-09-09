@@ -65,6 +65,6 @@ def sendToOBSFolder(statsList):
 
 
 
-sendToOBSFolder(getTeamStats(24))
+sendToOBSFolder(getTeamStats(8))
 
 # print(formatBasicStats(getTeamStats(8)))
