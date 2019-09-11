@@ -1,6 +1,8 @@
 import requests
 import json
 import time
+import os
+from shutil import copyfile
 
 PLAYERSTATSTYPELIST = ["timeOnIce", "assists", "goals", "pim", "shots", "games", "hits", "powerPlayGoals", "powerPlayPoints", "powerPlayTimeOnIce", "evenTimeOnIce", "penaltyMinutes", "faceOffPct", "shotPct", "gameWinningGoals", "overTimeGoals", "shortHandedGoals", "shortHandedPoints", "shortHandedTimeOnIce", "blocked", "plusMinus", "points", "shifts", "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame"]
 GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 'saves', 'powerPlaySaves', 'shortHandedSaves', 'evenSaves', 'shortHandedShots', 'evenShots', 'powerPlayShots', 'savePercentage', 'goalAgainstAverage', 'games', 'gamesStarted', 'shotsAgainst', 'goalsAgainst', 'timeOnIcePerGame', 'powerPlaySavePercentage', 'shortHandedSavePercentage','evenStrengthSavePercentage']
@@ -24,8 +26,6 @@ def findPlayerId(str1, jsonPlayersFile):
 
 		if result != -1:
 			results.append([player["fullName"], player["id"]])
-
-	resultCount = len(results)
 
 	if len(results) == 1:
 		print("Found 1 result... %s" % results[0][0])
@@ -80,8 +80,6 @@ def getPlayerStatsByType(playerID, statType="", season=""):
 	goals = data.keys()
 	print(goals)
 
-
-# TODO: Add a check for goalies and use goalei stattypelist for those
 def getCurrentSeasonPlayerStats(playerID):
 	if playerID == -1:
 		# print("No player ID.")
@@ -109,6 +107,7 @@ def getCurrentSeasonPlayerStats(playerID):
  		for i in range(0, len(GOALIESTATSTYPELIST)):
  			results.append([GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]])
  			# print("%-30s %-4s" % (GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]))
+	results.append(['playerID', playerID])
 
 	return results
 
@@ -127,31 +126,48 @@ def compare(pID1, pID2):
 # statType: "yearByYear"
 def getCareerNHLStats(playerID):
 	return
+
 # PLAYERSTATSTYPELIST = ["timeOnIce", "assists", "goals", "pim", "shots", "games", "hits", "powerPlayGoals", "powerPlayPoints",
 #  "powerPlayTimeOnIce", "evenTimeOnIce", "penaltyMinutes", "faceOffPct", "shotPct", "gameWinningGoals", "overTimeGoals", 
 # "shortHandedGoals", "shortHandedPoints", "shortHandedTimeOnIce", "blocked", "plusMinus", "points", "shifts", 
-# "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame"]
-#GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 'saves', 'powerPlaySaves', 'shortHandedSaves',
-#  'evenSaves', 'shortHandedShots', 'evenShots', 'powerPlayShots', 'savePercentage', 'goalAgainstAverage', 'games', 
+# "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame", 'playerID']
+#GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', '6saves', 'powerPlaySaves', 'shortHandedSaves',
+#  'evenSaves', 'shortHandedShots', 'evenShots', 'powerPlayShots', 'savePercentage', '15goalAgainstAverage', 'games', 
 # 'gamesStarted', 'shotsAgainst', 'goalsAgainst', 'timeOnIcePerGame', 'powerPlaySavePercentage', 'shortHandedSavePercentage',
-# 'evenStrengthSavePercentage']
+# 'evenStrengthSavePercentage', 'playerID']
 
 def formatStatsString(statsList):
-	print(len(statsList))
 	# if current is a player
-	if len(statsList) == 26:
-		statsStr = "Points   {}\n".format(statsList[1][1])
+	if len(statsList) == 27:
+		statsStr = "GP   {}\nG   {}\nA   {}\nP   {}\nPPG   {}\nGWG   {}\nS%   {}\nTOI/GP   {}\n".format(statsList[5][1], statsList[2][1], statsList[1][1], statsList[21][1], statsList[7][1], statsList[14][1], statsList[13][1], statsList[23][1])
 		
 	# if current is a goalie
-	elif len(statsList) == 22:
- 		statsStr = "Points   {}\n".format(statsList[1][1])
+	elif len(statsList) == 24:
+ 		statsStr = "GP   {}\nW   {}\nSv%   {}\nGAA   {}\nSO   {}\nS   {}\n".format(statsList[15][1], statsList[4][1], statsList[13][1], statsList[14][1], statsList[2][1], statsList[6][1])
+
 	return statsStr
 
-# test
+def sendToOBSFolder(statsList):
 
-print(formatStatsString(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json"))))
-# getPlayerStatsByType(findPlayerId)
-# id1 = findPlayerId(enterPlayerName(), "playerlist.json")
-# id2 = findPlayerId(enterPlayerName(), "playerlist.json")
-# compare(id1,id2)
-# print(getCurrentSeasonPlayerStats(id1))
+	id = len(statsList) - 1
+	
+	# initialize relative file paths
+	cwd = os.getcwd()
+	picDestDir = cwd + "/OBSPointers/Player/player_pic.png"
+	statDestDir = cwd + "/OBSPointers/Player/player_stats.txt"
+
+	# delete old picture in folder
+	os.remove(picDestDir)
+
+	# copy picture from assets folder to OBS pointers folder to send to OBS
+	assetSrcDir = cwd[:-7] + "assets/player-pictures/%s.png" % statsList[id][1]
+	copyfile(assetSrcDir,picDestDir)
+
+	# write stats string to stats text file to send to OBS
+	statsString = formatStatsString(statsList)
+	f = open(statDestDir, "w")
+	f.write(statsString)
+	f.close()
+
+# run player generating script
+sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json")))
