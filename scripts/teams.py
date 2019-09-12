@@ -39,32 +39,41 @@ def getTeamStats(teamID):
 	return stats
 
 def formatStatsString(statsList):
-	statsStr = "{}\n({}-{}-{})\nGP   {:>7}\nPoints   {:>3}\nGF/GP   {:>5}\nGA/GP   {:>7}\nPP%   {:>7}\nPK%   {:>7}\n".format(statsList[29][1],statsList[1][1], statsList[2][1], statsList[3][1], statsList[0][1], statsList[4][1], statsList[6][1], statsList[7][1], statsList[9][1], statsList[13][1])
+	statsStr = "{}\n({}-{}-{})\nGP   {:>7}\nPoints   {:>3}\nGF/GP   {:>5}\nGA/GP   {:>7}\nPP%   {:>7}\nPK%   {:>7}\n".format(statsList[29][1], statsList[1][1], statsList[2][1], statsList[3][1], statsList[0][1], statsList[4][1], statsList[6][1], statsList[7][1], statsList[9][1], statsList[13][1])
+	return statsStr
+
+def formatRecordString(statsList):
+	statsStr = "({} - {} - {})".format(statsList[1][1], statsList[2][1], statsList[3][1])
 	return statsStr
 
 # def formatAdvancedStats():
 
-def sendToOBSFolder(statsList):
+def sendToOBSFolder(statsList, recordPath = "/OBSPointers/Team/team_stats.txt"):
 	
 	cwd = os.getcwd()
 	picDestDir = cwd + "/OBSPointers/Team/team_pic.png"
-	statDestDir = cwd + "/OBSPointers/Team/team_stats.txt"
+	statDestDir = cwd + recordPath
 
-	# delete old picture in folder
-	os.remove(picDestDir)
+	if statsList[28][1] != 8:
+		# delete old picture in folder
+		os.remove(picDestDir)
 
-	# copy picture from assets folder to OBS pointers folder to send to OBS
-	assetSrcDir = cwd[:-7] + "assets/team-pictures/%s.png" % statsList[28][1]
-	copyfile(assetSrcDir,picDestDir)
+		# copy picture from assets folder to OBS pointers folder to send to OBS
+		assetSrcDir = cwd[:-7] + "assets/team-pictures/%s.png" % statsList[28][1]
+		copyfile(assetSrcDir,picDestDir)
 
 	# write stats string to stats text file to send to OBS
-	statsString = formatStatsString(statsList)
+	statsString = formatRecordString(statsList)
 	f = open(statDestDir, "w")
 	f.write(statsString)
 	f.close()
 
 
+# to modify opposing team in obs
+sendToOBSFolder(getTeamStats(4))
+# update habs stats
+sendToOBSFolder(getTeamStats(8), "/OBSPointers/Team/habs_stats.txt")
+# sendToOBSFolder(getTeamStats(7))
 
-sendToOBSFolder(getTeamStats(8))
 
 # print(formatBasicStats(getTeamStats(8)))

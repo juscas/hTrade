@@ -1,0 +1,8 @@
+Tomas Tatar
+timeOnIce                      1312:45    
+assists                           33         
+goals                              25             
+shots                              195       
+games                            80       
+hits                                 77      
+powerPlayGoals            4          

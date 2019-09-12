@@ -9,6 +9,8 @@ GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 
 
 PLAYERSFILE = "playerlist.json"
 
+playerNumber = 2
+
 def findPlayerId(str1, jsonPlayersFile):
 	results = []
 
@@ -29,6 +31,7 @@ def findPlayerId(str1, jsonPlayersFile):
 
 	if len(results) == 1:
 		print("Found 1 result... %s" % results[0][0])
+		writePlayerNameToFile(results[0][0])
 		return results[0][1]
 
 	elif len(results) == 0:
@@ -39,6 +42,7 @@ def findPlayerId(str1, jsonPlayersFile):
 		return chooseFromList(results)
 
 def enterPlayerName():
+	playerNumber = input("Enter player position (1-3 from right to left)")
 	searchStr = input("Search for a player:")
 	return searchStr
 
@@ -55,6 +59,7 @@ def chooseFromList(resultsList):
 			print("Invalid entry. Input a number corresponding to the desired player.")
 		choice = input("Choose a player:")
 	print("Displaying results for: \n%s\n" % resultsList[int(choice)-1][0])
+	writePlayerNameToFile(resultsList[int(choice)-1][0])
 	return resultsList[int(choice)-1][1]
 
 def getPlayerStatsByType(playerID, statType="", season=""):
@@ -137,13 +142,18 @@ def getCareerNHLStats(playerID):
 # 'evenStrengthSavePercentage', 'playerID']
 
 def formatStatsString(statsList):
+	
+	playerSymbolList = ["GP", "G", "A", "P", "PPG", "GWG"]
+	goalieSymbolList = ["GP", "W", "Sv%", "GAA", "SO"]
+
 	# if current is a player
 	if len(statsList) == 27:
-		statsStr = "GP   {}\nG   {}\nA   {}\nP   {}\nPPG   {}\nGWG   {}\nS%   {}\nTOI/GP   {}\n".format(statsList[5][1], statsList[2][1], statsList[1][1], statsList[21][1], statsList[7][1], statsList[14][1], statsList[13][1], statsList[23][1])
-		
+		#statsStr = "GP   {}\nG   {}\nA   {}\nP   {}\nPPG   {}\nGWG   {}\nS%   {}\nTOI/GP   {}\n".format(statsList[5][1], statsList[2][1], statsList[1][1], statsList[21][1], statsList[7][1], statsList[14][1], statsList[13][1], statsList[23][1])
+		statsStr = "{:<6} {:<6} {:<7} {:<6} {:<6}\n{:<6} {:<6} {:<6} {:<6} {:<6}".format(playerSymbolList[0], playerSymbolList[1], playerSymbolList[2], playerSymbolList[3], playerSymbolList[4], statsList[5][1], statsList[2][1], statsList[1][1], statsList[21][1], statsList[7][1])
+	
 	# if current is a goalie
 	elif len(statsList) == 24:
- 		statsStr = "GP   {}\nW   {}\nSv%   {}\nGAA   {}\nSO   {}\nS   {}\n".format(statsList[15][1], statsList[4][1], statsList[13][1], statsList[14][1], statsList[2][1], statsList[6][1])
+ 		statsStr = "{:<6} {:<6} {:<6} {:<6} {:<6}\n{:<6} {:<6} {:<6} {:<6} {:<6}".format(goalieSymbolList[0], goalieSymbolList[1], goalieSymbolList[2], goalieSymbolList[3], goalieSymbolList[4], statsList[15][1], statsList[4][1], statsList[13][1], statsList[14][1], statsList[2][1])
 
 	return statsStr
 
@@ -153,8 +163,8 @@ def sendToOBSFolder(statsList):
 	
 	# initialize relative file paths
 	cwd = os.getcwd()
-	picDestDir = cwd + "/OBSPointers/Player/player_pic.png"
-	statDestDir = cwd + "/OBSPointers/Player/player_stats.txt"
+	picDestDir = cwd + "/OBSPointers/Player/player%s_pic.png" % playerNumber
+	statDestDir = cwd + "/OBSPointers/Player/player%s_stats.txt" % playerNumber
 
 	# delete old picture in folder
 	os.remove(picDestDir)
@@ -169,5 +179,18 @@ def sendToOBSFolder(statsList):
 	f.write(statsString)
 	f.close()
 
+def writePlayerNameToFile(name):
+	
+	# initialize relative file paths
+	cwd = os.getcwd()
+	nameDestDir = cwd + "/OBSPointers/Player/player%s_name.txt" % playerNumber
+
+	# write name string to text file to send to OBS
+	f = open(nameDestDir, "w")
+	f.write(name)
+	f.close()
+
 # run player generating script
 sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json")))
+#sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json", 2)), 2)
+#sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json", 3)), 3)
