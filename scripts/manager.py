@@ -848,6 +848,8 @@ def activePlayerIDsToJSON(idList, file):
 	f.write("\n]\n}")
 	f.close()
 
+	return f
+
 ids = getCurrentTeamIDs()
 
-file = activePlayerIDsToJSON(playerIDs, "playerlist.json")
+file = activePlayerIDsToJSON(playerIDs, "playerlist1.json")

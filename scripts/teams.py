@@ -2,9 +2,11 @@ import requests
 import json
 import time
 import os
+import sys
 from shutil import copyfile
 
 STATSTYPELIST = ["gamesPlayed", "wins", "losses", "ot", "pts", "ptPctg", "goalsPerGame", "goalsAgainstPerGame", "evGGARatio", "powerPlayPercentage", "powerPlayGoals", "powerPlayGoalsAgainst", "powerPlayOpportunities", "penaltyKillPercentage", "shotsPerGame", "shotsAllowed", "winScoreFirst", "winOppScoreFirst", "winLeadFirstPer", "winLeadSecondPer", "winOutshootOpp", "winOutshotByOpp", "faceOffsTaken", "faceOffsWon", "faceOffsLost", "faceOffWinPercentage", "shootingPctg", "savePctg"]
+TEAMLIST = [["NJ", 1], ["NYI", 2], ["NYR", 3], ["PHI", 4], ["PIT", 5], ["BOS", 6], ["BUF", 7], ["MTL", 8], ["OTT", 9], ["TOR", 10], ["CAR", 12], ["FLA", 13], ["TB", 14], ["WSH", 15], ["CHI", 16], ["DET", 17], ["NSH", 18], ["STL", 19], ["CGY", 20], ["COL", 21], ["EDM", 22], ["VAN", 23], ["ANA", 24], ["DAL", 25], ["LA", 26], ["SJ", 28], ["CBJ", 29], ["MIN", 30], ["WPG", 52], ["ARI", 53], ["VGK", 54]]
 
 # Gets team stats from their team ID for the current season 
 def getTeamStats(teamID):
@@ -70,10 +72,14 @@ def sendToOBSFolder(statsList, recordPath = "/OBSPointers/Team/team_stats.txt"):
 
 
 # to modify opposing team in obs
-sendToOBSFolder(getTeamStats(4))
+
+teamID = 8
+for i in range(0, len(TEAMLIST)):
+	if TEAMLIST[i][0] == sys.argv[1]:
+		teamID = TEAMLIST[i][1]
+		break
+	
+# update opposing team stats
+sendToOBSFolder(getTeamStats(teamID))
 # update habs stats
 sendToOBSFolder(getTeamStats(8), "/OBSPointers/Team/habs_stats.txt")
-# sendToOBSFolder(getTeamStats(7))
-
-
-# print(formatBasicStats(getTeamStats(8)))

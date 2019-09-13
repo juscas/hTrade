@@ -5,7 +5,14 @@ import datetime
 
 YESTERDAY = datetime.date.today() - datetime.timedelta(1)
 TODAY = datetime.date.today()
-TOMORROW = datetime.date.today() + datetime.timedelta(1)
+DAY1 = datetime.date.today() + datetime.timedelta(1)
+DAY2 = datetime.date.today() + datetime.timedelta(2)
+DAY3 = datetime.date.today() + datetime.timedelta(3)
+DAY4 = datetime.date.today() + datetime.timedelta(4)
+DAY5 = datetime.date.today() + datetime.timedelta(5)
+DAY6 = datetime.date.today() + datetime.timedelta(6)
+DAY7 = datetime.date.today() + datetime.timedelta(7)
+
 
 # TODO
 def getTeamId():
@@ -26,7 +33,7 @@ Prints live stats from passed game id
 def getLiveGameInfo(gameID):
 
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/game/%s/feed/live" % gameID)
-
+	print(gameID)
 	data = response.json()
 
 	teamAway = data["gameData"]["teams"]["away"]
@@ -65,6 +72,16 @@ def getLiveGameInfo(gameID):
 	else:
 		print("%s %s %s %s | %s" % (teamAwayAbrv, "-", teamHomeAbrv, "-", "Not Started"))
 
+def getBasicGameInfo(gameID):
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/game/%s/feed/live" % gameID)
+	#print(gameID)
+	data = response.json()
+
+	teamAwayAbrv = data["gameData"]["teams"]["away"]["abbreviation"]
+	teamHomeAbrv = data["gameData"]["teams"]["home"]["abbreviation"]
+
+	print("%s  %s | " % (teamAwayAbrv, teamHomeAbrv))
+
 	# WAT
 def getCurrentTime(gameID):
 	currentTime = data["liveData"]["linescore"]["currentPeriodTimeRemaining"]
@@ -98,7 +115,7 @@ def getGameScoresToday(gamesList):
 def get3DayGames():
 	yes = getGamesToday(YESTERDAY)
 	tod = getGamesToday(TODAY)
-	tom = getGamesToday(TOMORROW)
+	tom = getGamesToday(DAY1)
 	print("Yesterday (%s)" % YESTERDAY)
 	for games in yes:
 		#print(games)
@@ -107,10 +124,49 @@ def get3DayGames():
 	for games in tod:
 		#print(games)
 		getLiveGameInfo(games)
-	print("\nTomorrow (%s)" % TOMORROW)
+	print("\nTomorrow (%s)" % DAY1)
 	for games in tom:
 		#print(games)
 		getLiveGameInfo(games)
+
+def getNextWeekGames():
+	day1 = getGamesToday(DAY1)
+	day2 = getGamesToday(DAY2)
+	day3 = getGamesToday(DAY3)
+	day4 = getGamesToday(DAY4)
+	day5 = getGamesToday(DAY5)
+	day6 = getGamesToday(DAY6)
+	day7 = getGamesToday(DAY7)
+	print("(%s)" % DAY1)
+	for games in day1:
+		#print(games)
+		getBasicGameInfo(games)
+	# print("\nToday (%s)" % TODAY)
+	print("(%s)" % DAY2)
+	for games in day2:
+		#print(games)
+		getBasicGameInfo(games)
+	# print("\nTomorrow (%s)" % DAY1)
+	print("(%s)" % DAY3)
+	for games in day3:
+		#print(games)
+		getBasicGameInfo(games)
+	print("(%s)" % DAY4)
+	for games in day4:
+		#print(games)
+		getBasicGameInfo(games)
+	print("(%s)" % DAY5)
+	for games in day5:
+		#print(games)
+		getBasicGameInfo(games)
+	print("(%s)" % DAY6)
+	for games in day6:
+		#print(games)
+		getBasicGameInfo(games)
+	print("(%s)" % DAY7)
+	for games in day7:
+		#print(games)
+		getBasicGameInfo(games)
 
 # Test
 #glist1 = getGamesToday(YESTERDAY)
@@ -120,4 +176,5 @@ def get3DayGames():
 #list = glist1 + glist2 + glist3
 #getGameScoresToday(list)
 
-get3DayGames()
+# get3DayGames()
+getNextWeekGames()

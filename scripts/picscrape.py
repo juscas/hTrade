@@ -49,11 +49,14 @@ def getPlayerESPNIDs(player):
                 continue
 
             url = "http://a.espncdn.com/combiner/i?img=/i/headshots/nhl/players/full/%s.png" % id
-            out_filepath = "/home/justin/git-repos/hTrade/pictures/%s" % realID
+            out_filepath = "/home/justin/Pictures/pictest/%s.png" % realID
             filename = wget.download(url, out_filepath)
             #print("%s, %s " % (id, name))
         print("No IDs: %s\n" % name_not_found)
 
 
-
+# scrape for player pictures
+getPlayerESPNIDs(0)
+# scrape for goalie pictures
 getPlayerESPNIDs(1)
+

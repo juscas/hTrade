@@ -2,6 +2,7 @@ import requests
 import json
 import time
 import os
+import sys
 from shutil import copyfile
 
 PLAYERSTATSTYPELIST = ["timeOnIce", "assists", "goals", "pim", "shots", "games", "hits", "powerPlayGoals", "powerPlayPoints", "powerPlayTimeOnIce", "evenTimeOnIce", "penaltyMinutes", "faceOffPct", "shotPct", "gameWinningGoals", "overTimeGoals", "shortHandedGoals", "shortHandedPoints", "shortHandedTimeOnIce", "blocked", "plusMinus", "points", "shifts", "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame"]
@@ -9,7 +10,7 @@ GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 
 
 PLAYERSFILE = "playerlist.json"
 
-playerNumber = 2
+playerNumber = 1
 
 def findPlayerId(str1, jsonPlayersFile):
 	results = []
@@ -31,7 +32,7 @@ def findPlayerId(str1, jsonPlayersFile):
 
 	if len(results) == 1:
 		print("Found 1 result... %s" % results[0][0])
-		writePlayerNameToFile(results[0][0])
+		#writePlayerNameToFile(results[0][0])
 		return results[0][1]
 
 	elif len(results) == 0:
@@ -42,7 +43,7 @@ def findPlayerId(str1, jsonPlayersFile):
 		return chooseFromList(results)
 
 def enterPlayerName():
-	playerNumber = input("Enter player position (1-3 from right to left)")
+	#playerNumber = sys.argv[1]
 	searchStr = input("Search for a player:")
 	return searchStr
 
@@ -106,12 +107,11 @@ def getCurrentSeasonPlayerStats(playerID):
 	if len(stats) == 27:
 		for i in range(0, len(PLAYERSTATSTYPELIST)):
 			results.append([PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]])
-			# print("%-30s %-4s" % (PLAYERSTATSTYPELIST[i], stats[PLAYERSTATSTYPELIST[i]]))
 
 	elif len(stats) == 23:
  		for i in range(0, len(GOALIESTATSTYPELIST)):
  			results.append([GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]])
- 			# print("%-30s %-4s" % (GOALIESTATSTYPELIST[i], stats[GOALIESTATSTYPELIST[i]]))
+
 	results.append(['playerID', playerID])
 
 	return results
@@ -132,14 +132,35 @@ def compare(pID1, pID2):
 def getCareerNHLStats(playerID):
 	return
 
-# PLAYERSTATSTYPELIST = ["timeOnIce", "assists", "goals", "pim", "shots", "games", "hits", "powerPlayGoals", "powerPlayPoints",
-#  "powerPlayTimeOnIce", "evenTimeOnIce", "penaltyMinutes", "faceOffPct", "shotPct", "gameWinningGoals", "overTimeGoals", 
-# "shortHandedGoals", "shortHandedPoints", "shortHandedTimeOnIce", "blocked", "plusMinus", "points", "shifts", 
-# "timeOnIcePerGame", "evenTimeOnIcePerGame", "powerPlayTimeOnIcePerGame", 'playerID']
-#GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', '6saves', 'powerPlaySaves', 'shortHandedSaves',
-#  'evenSaves', 'shortHandedShots', 'evenShots', 'powerPlayShots', 'savePercentage', '15goalAgainstAverage', 'games', 
-# 'gamesStarted', 'shotsAgainst', 'goalsAgainst', 'timeOnIcePerGame', 'powerPlaySavePercentage', 'shortHandedSavePercentage',
-# 'evenStrengthSavePercentage', 'playerID']
+def sortPlayersByPoints():
+	results = []
+
+	with open(PLAYERSFILE, 'r') as f:
+		playerListJSON = json.load(f)
+
+	for player in playerListJSON["Players"]:
+		playerID = player["id"]
+		print(playerID)
+		points = getPoints(playerID)
+		results.append([playerID, points])
+	
+	return(sorted(results, key = lambda x: x[1], reverse=True))
+	
+
+def getPoints(playerID):
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20182019" % (playerID))
+	data = response.json()
+
+	if (response.status_code != 404):
+		print("GET Request successful (%s)" % response.status_code)
+	else:
+		print("GET Request ERROR (%s)" % response.status_code)
+		return
+	try:
+		points = data["stats"][0]["splits"][0]["stat"]["points"]
+	except:
+		points = 0
+	return points
 
 def formatStatsString(statsList):
 	
@@ -148,8 +169,7 @@ def formatStatsString(statsList):
 
 	# if current is a player
 	if len(statsList) == 27:
-		#statsStr = "GP   {}\nG   {}\nA   {}\nP   {}\nPPG   {}\nGWG   {}\nS%   {}\nTOI/GP   {}\n".format(statsList[5][1], statsList[2][1], statsList[1][1], statsList[21][1], statsList[7][1], statsList[14][1], statsList[13][1], statsList[23][1])
-		statsStr = "{:<6} {:<6} {:<7} {:<6} {:<6}\n{:<6} {:<6} {:<6} {:<6} {:<6}".format(playerSymbolList[0], playerSymbolList[1], playerSymbolList[2], playerSymbolList[3], playerSymbolList[4], statsList[5][1], statsList[2][1], statsList[1][1], statsList[21][1], statsList[7][1])
+		statsStr = "{:<6} {:<6} {:<6} {:<6} {:<6}\n{:<6} {:<6} {:<6} {:<6} {:<6}".format(playerSymbolList[0], playerSymbolList[1], playerSymbolList[2], playerSymbolList[3], playerSymbolList[4], statsList[5][1], statsList[2][1], statsList[1][1], statsList[21][1], statsList[7][1])
 	
 	# if current is a goalie
 	elif len(statsList) == 24:
@@ -163,8 +183,8 @@ def sendToOBSFolder(statsList):
 	
 	# initialize relative file paths
 	cwd = os.getcwd()
-	picDestDir = cwd + "/OBSPointers/Player/player%s_pic.png" % playerNumber
-	statDestDir = cwd + "/OBSPointers/Player/player%s_stats.txt" % playerNumber
+	picDestDir = cwd + "/OBSPointers/Player/player%s_pic.png" % sys.argv[1]
+	statDestDir = cwd + "/OBSPointers/Player/player%s_stats.txt" % sys.argv[1]
 
 	# delete old picture in folder
 	os.remove(picDestDir)
@@ -183,7 +203,7 @@ def writePlayerNameToFile(name):
 	
 	# initialize relative file paths
 	cwd = os.getcwd()
-	nameDestDir = cwd + "/OBSPointers/Player/player%s_name.txt" % playerNumber
+	nameDestDir = cwd + "/OBSPointers/Player/player%s_name.txt" % sys.argv[1]
 
 	# write name string to text file to send to OBS
 	f = open(nameDestDir, "w")
@@ -191,6 +211,5 @@ def writePlayerNameToFile(name):
 	f.close()
 
 # run player generating script
-sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json")))
-#sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json", 2)), 2)
-#sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json", 3)), 3)
+#sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json")))
+# print(sortPlayersByPoints())
