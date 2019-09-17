@@ -1,2 +1,2 @@
-GP     G      A       P      PPG   
-82     28     44     72     4     
+GP     G      A      P      PPG   
+82     38     46     84     12    

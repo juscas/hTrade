@@ -10,6 +10,8 @@ GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 
 
 PLAYERSFILE = "playerlist.json"
 
+playerList = [["Nikita Kucherov", [48, 80, 128]]]
+
 playerNumber = 1
 
 def findPlayerId(str1, jsonPlayersFile):
@@ -139,10 +141,10 @@ def sortPlayersByPoints():
 		playerListJSON = json.load(f)
 
 	for player in playerListJSON["Players"]:
-		playerID = player["id"]
-		print(playerID)
-		points = getPoints(playerID)
-		results.append([playerID, points])
+		playerName = player["fullName"]
+		#print(playerName)
+		pointsTuple = getPoints(player["id"])
+		results.append([playerName, pointsTuple])
 	
 	return(sorted(results, key = lambda x: x[1], reverse=True))
 	
@@ -156,11 +158,17 @@ def getPoints(playerID):
 	else:
 		print("GET Request ERROR (%s)" % response.status_code)
 		return
+
+	points = 0
+	assists = 0
+	goals = 0
 	try:
 		points = data["stats"][0]["splits"][0]["stat"]["points"]
+		assists = data["stats"][0]["splits"][0]["stat"]["assists"]
+		goals = data["stats"][0]["splits"][0]["stat"]["goals"]
 	except:
-		points = 0
-	return points
+		print("Player is a goalie.")
+	return [points, goals, assists]
 
 def formatStatsString(statsList):
 	
@@ -210,6 +218,13 @@ def writePlayerNameToFile(name):
 	f.write(name)
 	f.close()
 
+def getTop20Players(playerList):
+	outputStr = ""
+	for i in range(20):
+		outputStr += "%s. %s: %s, %s, %s\t" % ((i+1), playerList[i][0], playerList[i][1][1], playerList[i][1][2], playerList[i][1][0])
+	return outputStr
+
 # run player generating script
-#sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json")))
-# print(sortPlayersByPoints())
+# sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json")))
+#getTop20Players(sortPlayersByPoints())
+# print(getPoints(8470638))

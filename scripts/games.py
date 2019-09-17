@@ -33,7 +33,7 @@ Prints live stats from passed game id
 def getLiveGameInfo(gameID):
 
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/game/%s/feed/live" % gameID)
-	print(gameID)
+	# print(gameID)
 	data = response.json()
 
 	teamAway = data["gameData"]["teams"]["away"]
@@ -61,6 +61,12 @@ def getLiveGameInfo(gameID):
 	if period > 0:
 		#print("Period %s\nShots: %s: %s %s: %s" % (period, teamAway, shotsAway, teamHome, shotsHome ))
 		#print("Period %s" % period)
+		if period == 1:
+			period = '1st'
+		if period == 2:
+			period = '2nd'
+		if period == 3:
+			period = '3rd'
 		if period == 3 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
 			period = 'Final'
 		if period == 4 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
@@ -68,9 +74,9 @@ def getLiveGameInfo(gameID):
 		if period == 5 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
 			period = 'Final (SO)'
 
-		print("%s %s %s %s | %s" % (teamAwayAbrv, goalsAway, teamHomeAbrv, goalsHome, period))
+		return "%s %s %s %s | %s\t" % (teamAwayAbrv, goalsAway, teamHomeAbrv, goalsHome, period)
 	else:
-		print("%s %s %s %s | %s" % (teamAwayAbrv, "-", teamHomeAbrv, "-", "Not Started"))
+		return "%s %s %s %s | %s\t" % (teamAwayAbrv, "-", teamHomeAbrv, "-", "Not Started")
 
 def getBasicGameInfo(gameID):
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/game/%s/feed/live" % gameID)
@@ -88,7 +94,7 @@ def getCurrentTime(gameID):
 
 
 	# returns list of game IDs from the current date (nhl api refreshes at 12:00 EST)
-def getGamesToday(day):
+def getGames(day):
 
 	#dateToday = datetime.date.today()
 
@@ -107,10 +113,12 @@ def getGamesToday(day):
 
 	return gamesList
 
-def getGameScoresToday(gamesList):
+def getGameScores(gamesList):
+	outputStr = ""
 	for games in gamesList:
 		#print(games)
-		getLiveGameInfo(games)
+		outputStr += getLiveGameInfo(games)
+	return outputStr
 
 def get3DayGames():
 	yes = getGamesToday(YESTERDAY)
@@ -174,7 +182,7 @@ def getNextWeekGames():
 #glist3 = getGamesToday(TOMORROW)
 
 #list = glist1 + glist2 + glist3
-#getGameScoresToday(list)
+# print(getGameScores(getGames(TODAY)))
 
 # get3DayGames()
-getNextWeekGames()
+# getNextWeekGames()
