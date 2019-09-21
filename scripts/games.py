@@ -74,9 +74,9 @@ def getLiveGameInfo(gameID):
 		if period == 5 and data["liveData"]["linescore"]["currentPeriodTimeRemaining"] == "Final":
 			period = 'Final (SO)'
 
-		return "%s %s %s %s | %s\t" % (teamAwayAbrv, goalsAway, teamHomeAbrv, goalsHome, period)
+		return "%s %s  %s %s | %s          " % (teamAwayAbrv, goalsAway, teamHomeAbrv, goalsHome, period)
 	else:
-		return "%s %s %s %s | %s\t" % (teamAwayAbrv, "-", teamHomeAbrv, "-", "Not Started")
+		return "%s %s  %s %s | %s          " % (teamAwayAbrv, "-", teamHomeAbrv, "-", "Not Started")
 
 def getBasicGameInfo(gameID):
 	response = requests.get("https://statsapi.web.nhl.com/api/v1/game/%s/feed/live" % gameID)

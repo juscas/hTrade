@@ -34,7 +34,7 @@ def findPlayerId(str1, jsonPlayersFile):
 
 	if len(results) == 1:
 		print("Found 1 result... %s" % results[0][0])
-		#writePlayerNameToFile(results[0][0])
+		writePlayerNameToFile(results[0][0])
 		return results[0][1]
 
 	elif len(results) == 0:
@@ -159,14 +159,14 @@ def getPoints(playerID):
 		print("GET Request ERROR (%s)" % response.status_code)
 		return
 
-	points = 0
-	assists = 0
-	goals = 0
 	try:
 		points = data["stats"][0]["splits"][0]["stat"]["points"]
 		assists = data["stats"][0]["splits"][0]["stat"]["assists"]
 		goals = data["stats"][0]["splits"][0]["stat"]["goals"]
 	except:
+		points = 0
+		assists = 0
+		goals = 0
 		print("Player is a goalie.")
 	return [points, goals, assists]
 
@@ -221,10 +221,10 @@ def writePlayerNameToFile(name):
 def getTop20Players(playerList):
 	outputStr = ""
 	for i in range(20):
-		outputStr += "%s. %s: %s, %s, %s\t" % ((i+1), playerList[i][0], playerList[i][1][1], playerList[i][1][2], playerList[i][1][0])
+		outputStr += "%s. %s:   %s G   %s A   %s P       " % ((i+1), playerList[i][0], playerList[i][1][1], playerList[i][1][2], playerList[i][1][0])
 	return outputStr
 
 # run player generating script
-# sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json")))
+sendToOBSFolder(getCurrentSeasonPlayerStats(findPlayerId(enterPlayerName(), "playerlist.json")))
 #getTop20Players(sortPlayersByPoints())
 # print(getPoints(8470638))

@@ -50,10 +50,11 @@ def formatRecordString(statsList):
 
 # def formatAdvancedStats():
 
-def sendToOBSFolder(statsList, recordPath = "/OBSPointers/Team/team_stats.txt"):
+def sendToOBSFolder(statsList):
 	
 	cwd = os.getcwd()
-	picDestDir = cwd + "/OBSPointers/Team/team_pic.png"
+	picDestDir = cwd + "/OBSPointers/Team/team_pic%s.png" % sys.argv[1]
+	recordPath = "/OBSPointers/Team/team_stats%s.txt" % sys.argv[1]
 	statDestDir = cwd + recordPath
 
 	if statsList[28][1] != 8:
@@ -63,6 +64,10 @@ def sendToOBSFolder(statsList, recordPath = "/OBSPointers/Team/team_stats.txt"):
 		# copy picture from assets folder to OBS pointers folder to send to OBS
 		assetSrcDir = cwd[:-7] + "assets/team-pictures/%s.png" % statsList[28][1]
 		copyfile(assetSrcDir,picDestDir)
+	else:
+		recordPath = "/OBSPointers/Team/habs_stats.txt"
+		statDestDir = cwd + recordPath
+
 
 	# write stats string to stats text file to send to OBS
 	statsString = formatRecordString(statsList)
@@ -75,11 +80,11 @@ def sendToOBSFolder(statsList, recordPath = "/OBSPointers/Team/team_stats.txt"):
 
 teamID = 8
 for i in range(0, len(TEAMLIST)):
-	if TEAMLIST[i][0] == sys.argv[1]:
+	if TEAMLIST[i][0] == sys.argv[2]:
 		teamID = TEAMLIST[i][1]
 		break
 	
 # update opposing team stats
 sendToOBSFolder(getTeamStats(teamID))
 # update habs stats
-sendToOBSFolder(getTeamStats(8), "/OBSPointers/Team/habs_stats.txt")
+sendToOBSFolder(getTeamStats(8))
