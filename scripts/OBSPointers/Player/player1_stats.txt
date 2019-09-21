@@ -1,2 +1,2 @@
-GP     G      A       P      PPG   
-82     34     32     66     11    
+GP     G      A      P      PPG   
+66     22     18     40     4     
