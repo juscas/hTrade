@@ -1,2 +1,2 @@
-GP     W      Sv%    GAA    SO    
-66     35     0.918  2.49   4     
+GP     G      A      P      PPG   
+66     30     33     63     7     

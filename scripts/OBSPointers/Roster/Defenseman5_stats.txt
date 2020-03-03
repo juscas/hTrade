@@ -1,0 +1,1 @@
+{'timeOnIce': '13:23', 'assists': 0, 'goals': 0, 'shots': 2, 'hits': 3, 'powerPlayGoals': 0, 'powerPlayAssists': 0, 'penaltyMinutes': 0, 'faceOffWins': 0, 'faceoffTaken': 0, 'takeaways': 0, 'giveaways': 0, 'shortHandedGoals': 0, 'shortHandedAssists': 0, 'blocked': 0, 'plusMinus': 1, 'evenTimeOnIce': '12:08', 'powerPlayTimeOnIce': '0:00', 'shortHandedTimeOnIce': '1:15'}

@@ -26,7 +26,7 @@ def sortPlayersByPoints():
 	
 
 def getPoints(playerID):
-	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20182019" % (playerID))
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20192020" % (playerID))
 	data = response.json()
 
 	if (response.status_code != 404):
@@ -67,7 +67,7 @@ def writeStringToFile(tickerStr):
 tickerStr = ""
 
 # Print top 20 players to ticker text file
-tickerStr += "|    2018-2019 Top Scorers   "
+tickerStr += "|    2019-2020 Top Scorers   "
 tickerStr += getTop20Players(sortPlayersByPoints())
 
 # Print Tonight's games to ticker text file

@@ -182,7 +182,7 @@ def getNextWeekGames():
 #glist3 = getGamesToday(TOMORROW)
 
 #list = glist1 + glist2 + glist3
-# print(getGameScores(getGames(TODAY)))
+#print(getGameScores(getGames(TODAY)))
 
 # get3DayGames()
 # getNextWeekGames()

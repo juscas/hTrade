@@ -10,7 +10,7 @@ GOALIESTATSTYPELIST = ['timeOnIce', 'ot', 'shutouts', 'ties', 'wins', 'losses', 
 
 PLAYERSFILE = "playerlist.json"
 
-playerList = [["Nikita Kucherov", [48, 80, 128]]]
+# playerList = [["Nikita Kucherov", [48, 80, 128]]]
 
 playerNumber = 1
 
@@ -93,7 +93,7 @@ def getCurrentSeasonPlayerStats(playerID):
 		# print("No player ID.")
 		return -1
 
-	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20182019" % (playerID))
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20192020" % (playerID))
 	data = response.json()
 
 	if (response.status_code != 404):
@@ -150,7 +150,7 @@ def sortPlayersByPoints():
 	
 
 def getPoints(playerID):
-	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20182019" % (playerID))
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20192020" % (playerID))
 	data = response.json()
 
 	if (response.status_code != 404):

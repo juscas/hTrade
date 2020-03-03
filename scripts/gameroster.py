@@ -24,33 +24,67 @@ def getRosterStats(gameID):
 		# stats
 		try:
 			# id, name, position, stats (dict)
-			stats.append([roster[i], data["liveData"]["boxscore"]["teams"]["away"]["players"]["ID%s" % roster[i]]["person"]["fullName"], data["gameData"]["players"]["ID%s" % 8477503]["primaryPosition"]["type"], data["liveData"]["boxscore"]["teams"]["away"]["players"]["ID%s" % roster[i]]["stats"]["skaterStats"]])
+			stats.append([roster[i], data["liveData"]["boxscore"]["teams"]["away"]["players"]["ID%s" % roster[i]]["person"]["fullName"], data["gameData"]["players"]["ID%s" % roster[i]]["primaryPosition"]["type"], data["liveData"]["boxscore"]["teams"]["away"]["players"]["ID%s" % roster[i]]["stats"]["skaterStats"]])
 		except:
-			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nErrors:\n%s doesn't have stats for this game\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" % data["liveData"]["boxscore"]["teams"]["away"]["players"]["ID%s" % roster[i]]["person"]["fullName"])
+			print("Error! %s doesn't have stats for this game" % data["liveData"]["boxscore"]["teams"]["away"]["players"]["ID%s" % roster[i]]["person"]["fullName"])
+		# print(stats[i][1])
 
-	print(stats[2][3]["timeOnIce"])
+	
+	return stats
+
+def formatStatsString(statsList):
+	
+	playerSymbolList = ["GP", "G", "A", "P", "PPG", "GWG"]
+	goalieSymbolList = ["GP", "W", "Sv%", "GAA", "SO"]
+
+	# if current is a player
+	if len(statsList) == 27:
+		statsStr = "{:<6} {:<6} {:<6} {:<6} {:<6}\n{:<6} {:<6} {:<6} {:<6} {:<6}".format(playerSymbolList[0], playerSymbolList[1], playerSymbolList[2], playerSymbolList[3], playerSymbolList[4], statsList[5][1], statsList[2][1], statsList[1][1], statsList[21][1], statsList[7][1])
+	
+	# if current is a goalie
+	elif len(statsList) == 24:
+ 		statsStr = "{:<6} {:<6} {:<6} {:<6} {:<6}\n{:<6} {:<6} {:<6} {:<6} {:<6}".format(goalieSymbolList[0], goalieSymbolList[1], goalieSymbolList[2], goalieSymbolList[3], goalieSymbolList[4], statsList[15][1], statsList[4][1], statsList[13][1], statsList[14][1], statsList[2][1])
+
+	return statsStr
 
 def sendToOBSFolder(statsList):
 
-	id = len(statsList) - 1
+	fwdCount = 0
+	defCount = 0
 	
-	# initialize relative file paths
-	cwd = os.getcwd()
-	picDestDir = cwd + "/OBSPointers/Player/player%s_pic.png" % sys.argv[1]
-	statDestDir = cwd + "/OBSPointers/Player/player%s_stats.txt" % sys.argv[1]
+	for i in range(0, len(statsList)):
+		# initialize relative file paths
+		cwd = os.getcwd()
 
-	# delete old picture in folder
-	os.remove(picDestDir)
+		if statsList[i][2] == 'Forward':
+			fwdCount += 1
+			picDestDir = cwd + "/OBSPointers/Roster/%s%s_pic.png" % (statsList[i][2], fwdCount)
+			statDestDir = cwd + "/OBSPointers/Roster/%s%s_stats.txt" % (statsList[i][2], fwdCount)
+		else: 
+			defCount += 1
+			picDestDir = cwd + "/OBSPointers/Roster/%s%s_pic.png" % (statsList[i][2], defCount)
+			statDestDir = cwd + "/OBSPointers/Roster/%s%s_stats.txt" % (statsList[i][2], defCount)
 
-	# copy picture from assets folder to OBS pointers folder to send to OBS
-	assetSrcDir = cwd[:-7] + "assets/player-pictures/%s.png" % statsList[id][1]
-	copyfile(assetSrcDir,picDestDir)
+		# delete old picture in folder
+		try:
+			os.remove(picDestDir)
+		except:
+			print("No file to delete")
 
-	# write stats string to stats text file to send to OBS
-	statsString = formatStatsString(statsList)
-	f = open(statDestDir, "w")
-	f.write(statsString)
-	f.close()
+		# copy picture from assets folder to OBS pointers folder to send to OBS
+		try:
+			assetSrcDir = cwd[:-7] + "assets/player-pictures/%s.png" % statsList[i][0]
+			copyfile(assetSrcDir,picDestDir)
+		except:
+			print("fuck, no picture")
 
+		# write stats string to stats text file to send to OBS
+		statsString = str(statsList[i][3])
+		#formatStatsString(statsList)
+		f = open(statDestDir, "w")
+		f.write(statsString)
+		f.close()
 
-getRosterStats(2018020001)
+sendToOBSFolder(getRosterStats(2019010047))
+
+# print(getRosterStats(2018020001))
