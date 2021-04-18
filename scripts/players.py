@@ -93,7 +93,7 @@ def getCurrentSeasonPlayerStats(playerID):
 		# print("No player ID.")
 		return -1
 
-	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20192020" % (playerID))
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20202021" % (playerID))
 	data = response.json()
 
 	if (response.status_code != 404):
@@ -150,7 +150,7 @@ def sortPlayersByPoints():
 	
 
 def getPoints(playerID):
-	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20192020" % (playerID))
+	response = requests.get("https://statsapi.web.nhl.com/api/v1/people/%s/stats/?stats=statsSingleSeason&season=20202021" % (playerID))
 	data = response.json()
 
 	if (response.status_code != 404):
